@@ -10,3 +10,8 @@
 .element {
   .center-block();
 }
+
+.index_img
+{
+    height: 300px;
+}
