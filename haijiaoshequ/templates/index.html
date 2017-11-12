@@ -4,14 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <title>海骄社区</title>
+  <title>{{ name }} </title>
+    {% load static %}
   <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="{% static '/index.css' %}">
   <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
   <!--
   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   -->
-  <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" >
 
   <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
   <!--
@@ -24,7 +25,7 @@
   <!--
   <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   -->
-  <script src="../static/bootstrap/js/bootstrap.min.js" ></script>
+  <script src="{% static 'bootstrap/js/bootstrap.min.js' %} " ></script>
 
 </head>
 <body>
@@ -67,7 +68,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active index_img">
-       <img class="img-responsive center-block " src="../image/理工运动场.jpg" alt="理工运动场.jpg">
+       <img class="img-responsive center-block " src="{% static '/image/carousel-1.jpg.jpg' %}" alt="理工运动场.jpg">
       <div class="carousel-caption">
         理工运动场
       </div>
@@ -148,7 +149,7 @@
   </div>
   <div class="col-md-4">
     <div class="house_info thumbnail">
-      <div class="img_border"><img  class="img-responsive" src="../image/房间2.jpg" alt="房间2"></div>
+      <div class="img_border"><img class="img-responsive" src="../image/房间2.jpg" alt="房间2"></div>
       <div class="caption">
         <h4>四川大学</h4>
         <p>四川大学门口的酒吧一条街</p>
