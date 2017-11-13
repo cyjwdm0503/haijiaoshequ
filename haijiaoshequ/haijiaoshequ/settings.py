@@ -25,7 +25,7 @@ SECRET_KEY = 'uc)9s6&k5vh6j7sp4hmgz#8wroiw!$evmo!7$m!ahx5prgx-hq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.103']
 
 
 # Application definition
@@ -85,7 +85,7 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
 ]
 STATICFILES_DIRS = [
-    "image",
+    "image","static"
 ]
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

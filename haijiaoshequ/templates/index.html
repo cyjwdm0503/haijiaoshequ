@@ -26,9 +26,9 @@
   <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   -->
   <script src="{% static 'bootstrap/js/bootstrap.min.js' %} " ></script>
-
+    <script src="{% static 'salvattore.js' %}"></script>
 </head>
-<body>
+<body >
 <nav class="navbar navbar-default navbar-fixed-top ">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -49,6 +49,7 @@
         <li><a href="#zuixinfangyuan">最新房源</a></li>
         <li><a href="#woyaozufang">我要租房</a></li>
         <li><a href="#fangdongjiameng">房东加盟</a></li>
+        <li><a href="#gerenzhongxin">个人中心</a></li>
       </ul>
 
     </div><!-- /.navbar-collapse -->
@@ -74,13 +75,13 @@
       </div>
     </div>
     <div class="item index_img">
-      <img class="img-responsive center-block " src="../image/理工砚湖.jpg" alt="理工砚湖.jpg">
+      <img class="img-responsive center-block " src="{% static '/理工砚湖.jpg' %}" alt="理工砚湖.jpg">
       <div class="carousel-caption">
         理工砚湖
       </div>
     </div>
     <div class="item index_img">
-      <img class="img-responsive center-block " src="../image/理工草坪.jpg" alt="理工草坪.jpg">
+      <img class="img-responsive center-block " src="{% static '/理工草坪.jpg' %}" alt="理工草坪.jpg">
       <div class="carousel-caption">
         理工草坪
       </div>
@@ -105,11 +106,11 @@
   <div class="page-header">
   <h2 class="text-center">查找房源</h2>
     <div class="container-fluid">
-      <form class="form-inline">
-  <div class="form-group" style="width:94%;">
+      <form class="form-inline row">
+  <div class="form-group col-xs-9">
     <input type="jiequ" class="form-control" style="width: 100%" id="index_location" placeholder="请输入小区 商圈 街区">
   </div>
-  <div class="form-group" style="width: 5%">
+  <div class="form-group col-xs-2 " style="min-width: 76px">
   <button type="submit"  style="width: 100%" class="btn text-right btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
     </div>
 </form>
@@ -134,9 +135,9 @@
   <div class="page-header">
   <h2 class="text-center">最新房源</h2>
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-3">
     <div class=" house_info thumbnail">
-      <div class="img_border"><img class="img-responsive" src="../image/房间1.jpg" alt="房间1"></div>
+      <div class="img_border"><img class="img-responsive" src="{% static '/房间1.jpg' %}" alt="房间1"></div>
       <div class="caption">
         <h4>成都理工</h4>
         <p>来自于十里彩云间，理工学子大家都懂的</p>
@@ -147,9 +148,9 @@
       </div>
     </div>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-3">
     <div class="house_info thumbnail">
-      <div class="img_border"><img class="img-responsive" src="../image/房间2.jpg" alt="房间2"></div>
+      <div class="img_border"><img class="img-responsive" src="{% static '/房间2.jpg' %}" alt="房间2"></div>
       <div class="caption">
         <h4>四川大学</h4>
         <p>四川大学门口的酒吧一条街</p>
@@ -160,9 +161,9 @@
       </div>
     </div>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-3">
     <div class="house_info thumbnail">
-      <div class="img_border"><img class="img-responsive" src="../image/房间3.jpg" alt="房间3"></div>
+      <div class="img_border"><img class="img-responsive" src="{% static '/房间3.jpg' %}" alt="房间3"></div>
       <div class="caption">
         <h4>西华大学</h4>
         <p>省体育馆附近的西华大学</p>
@@ -173,9 +174,9 @@
       </div>
     </div>
   </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
     <div class="thumbnail">
-      <div class="img_border"><img src="../image/房间4.jpg" alt="房间4"></div>
+      <div class="img_border"><img class="img-responsive"  src="{% static '/房间4.jpg' %}" alt="房间4"></div>
       <div class="caption">
         <h4>电子科大</h4>
         <p>建设路的电子科大</p>
@@ -186,9 +187,9 @@
       </div>
     </div>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-3">
     <div class="thumbnail">
-      <div class="img_border"><img class="img-responsive" src="../image/房间5.jpg" alt="房间5"></div>
+      <div class="img_border"><img class="img-responsive" src="{% static '/房间5.jpg' %}" alt="房间5"></div>
       <div class="caption">
         <h4>成都理工</h4>
         <p>来自于十里彩云间，理工学子大家都懂的</p>
@@ -204,7 +205,48 @@
 </div>
 <!---最新房源展示-->
 
-
+<!--最新房源展示-->
+<div class="container-fluid">
+  <div class="page-header">
+  <h2 class="text-center">四大支持</h2>
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-6 col-xs-12">
+                  <div class="row">
+                      <div class="col-xs-6 ">
+                          <div class="four_support_border ">
+                           <img class="img-responsive center-block " src="{% static '/房间1.jpg' %}" alt="房间1">
+                          </div>
+                      </div>
+                      <div class="col-xs-6 ">
+                         <div class="four_support_border">
+                           <img class="img-responsive center-block " src="{% static '/房间2.jpg' %}" alt="房间2">
+                          </div>
+                      </div>
+                  </div>
+                  </div>
+              <div class="col-md-6 col-xs-12 four_support_info">The regime, said President Trump, is a threat to the civilized world and international peace and stability. We will not stand for that, said President Trump. The era of strategic patience is over.
+特朗普总统表示，朝鲜政权是对文明世界的威胁，是对国际和平和稳定的威胁。特朗普总统表示，我们不会容忍这一点。战略容忍的时代已经过去了。              </div>
+           <div class="col-md-6 col-xs-12">
+               <div class="row">
+                      <div class="col-xs-6 ">
+                          <div class="four_support_border">
+                           <img class="img-responsive center-block " src="{% static '/房间1.jpg' %}" alt="房间1">
+                          </div>
+                      </div>
+                      <div class="col-xs-6 ">
+                         <div class="four_support_border">
+                           <img class="img-responsive center-block " src="{% static '/房间2.jpg' %}" alt="房间2">
+                          </div>
+                      </div>
+                  </div>
+                  </div>
+              <div class="col-md-6 col-xs-12 four_support_info">The regime, said President Trump, is a threat to the civilized world and international peace and stability. We will not stand for that, said President Trump. The era of strategic patience is over.
+特朗普总统表示，朝鲜政权是对文明世界的威胁，是对国际和平和稳定的威胁。特朗普总统表示，我们不会容忍这一点。战略容忍的时代已经过去了。              </div>
+          </div>
+      </div>
+  </div>
+</div>
 
 
 </body>

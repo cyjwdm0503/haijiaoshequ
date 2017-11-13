@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """haijiaoshequ URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -21,5 +22,5 @@ import  views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^zhanshi/',include('zhanshi.urls')),
-    url(r'^',views.index,{'name':'wdm'})
+    url(r'^',views.index,{'name':'海骄社区'})
 ]
