@@ -6,6 +6,11 @@
   margin-right: auto;
 }
 
+h2
+{
+ padding-bottom: 20px;
+}
+
 img
 {  display: block;
   margin-left: auto;
@@ -50,7 +55,7 @@ img
 
 .four_support_info
 {
-    height: 200px;
+    height: 160px;
 }
 
 .four_support_border >img
@@ -59,4 +64,18 @@ img
     width: auto;
     max-width: 100%;
     max-height:150px;
+}
+
+.bg{background:url('') no-repeat center fixed;background-size:contain}
+
+
+.center-vertical {
+    position:relative;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.gongsi_info{
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
