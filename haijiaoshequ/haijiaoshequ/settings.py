@@ -78,7 +78,16 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    },
+
+#    'mysql':{
+#        'ENGINE':'mysql.connector.django',
+#        'NAME':'zufang',
+#        'USER':'zufang',
+#        'PASSWORD':'123456',
+#        'HOST':'172.27.0.12',
+#        'PORT':'3306',
+#   }*/
 }
 
 STATICFILES_FINDERS = [
