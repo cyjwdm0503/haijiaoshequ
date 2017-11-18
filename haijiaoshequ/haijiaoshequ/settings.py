@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for haijiaoshequ project.
 
@@ -25,7 +26,7 @@ SECRET_KEY = 'uc)9s6&k5vh6j7sp4hmgz#8wroiw!$evmo!7$m!ahx5prgx-hq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.103']
+ALLOWED_HOSTS = ['192.168.1.103',r'www.haijoy.com']
 
 
 # Application definition
