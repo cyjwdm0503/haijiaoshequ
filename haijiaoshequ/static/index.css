@@ -79,3 +79,8 @@ img
     padding-top: 60px;
     padding-bottom: 60px;
 }
+
+.bottom {
+    background-color: #30aaa0;
+    overflow: hidden;
+}

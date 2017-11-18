@@ -1,279 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <title>{{ name }} </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>{{ name }} </title>
     {% load static %}
-  <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-  <link rel="stylesheet" href="{% static '/index.css' %}">
-  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-  <!--
-  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  -->
-  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" >
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="{% static '/index.css' %}">
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!--
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
 
-  <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
-  <!--
-  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-  -->
-  <!---<link rel="stylesheet" href="../static/bootstrap/css/bootstrap-theme.min.css" >
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <!--
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    -->
+    <!---<link rel="stylesheet" href="../static/bootstrap/css/bootstrap-theme.min.css" >
 
 
-  <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-  <!--
-  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  -->
-    <script src="{% static 'bootstrap/js/bootstrap.min.js' %} " ></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <!--
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    -->
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %} "></script>
 
 </head>
 <body>
 
 
 <nav class="navbar navbar-default navbar-fixed-top ">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">海骄社区</a>
-    </div>
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">海骄社区</a>
+        </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
 
-      <ul class="nav navbar-nav navbar-right nav-tabs "  role="tablist">
-        <li><a href="#zuixinfangyuan">最新房源</a></li>
-        <li><a href="#woyaozufang">我要租房</a></li>
-        <li><a href="#fangdongjiameng">房东加盟</a></li>
-        <li><a href="#gerenzhongxin">个人中心</a></li>
-      </ul>
+            <ul class="nav navbar-nav navbar-right nav-tabs " role="tablist">
+                <li><a href="#zuixinfangyuan">最新房源</a></li>
+                <li><a href="#woyaozufang">我要租房</a></li>
+                <li><a href="#fangdongjiameng">房东加盟</a></li>
+                <li><a href="#gerenzhongxin">个人中心</a></li>
+            </ul>
 
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
 </nav>
 
 
 <!--照片墙-->
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active index_img">
-       <img class="img-responsive center-block " src="{% static '/理工运动场.jpg' %}" alt="理工运动场.jpg">
-      <div class="carousel-caption">
-        理工运动场
-      </div>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active index_img">
+            <img class="img-responsive center-block " src="{% static '/理工运动场.jpg' %}" alt="理工运动场.jpg">
+            <div class="carousel-caption">
+                理工运动场
+            </div>
+        </div>
+        <div class="item index_img">
+            <img class="img-responsive center-block " src="{% static '/理工砚湖.jpg' %}" alt="理工砚湖.jpg">
+            <div class="carousel-caption">
+                理工砚湖
+            </div>
+        </div>
+        <div class="item index_img">
+            <img class="img-responsive center-block " src="{% static '/理工草坪.jpg' %}" alt="理工草坪.jpg">
+            <div class="carousel-caption">
+                理工草坪
+            </div>
+        </div>
     </div>
-    <div class="item index_img">
-      <img class="img-responsive center-block " src="{% static '/理工砚湖.jpg' %}" alt="理工砚湖.jpg">
-      <div class="carousel-caption">
-        理工砚湖
-      </div>
-    </div>
-    <div class="item index_img">
-      <img class="img-responsive center-block " src="{% static '/理工草坪.jpg' %}" alt="理工草坪.jpg">
-      <div class="carousel-caption">
-        理工草坪
-      </div>
-    </div>
-  </div>
 
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
 </div>
 <!--照片墙结束--->
 
 
 <!--查找最新房源-->
 <div>
-  <div class="page-header">
-  <h2 class="text-center">查找房源</h2>
-    <div class="container-fluid">
-      <form class="form-inline row">
-  <div class="form-group col-xs-9">
-    <input type="jiequ" class="form-control" style="width: 100%" id="index_location" placeholder="请输入小区 商圈 街区">
-  </div>
-  <div class="form-group col-xs-3" style="min-width: 76px">
-  <button type="submit"  style="width: 100%" class="btn text-right btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+    <div class="page-header">
+        <h2 class="text-center">查找房源</h2>
+        <div class="container-fluid">
+            <form class="form-inline row">
+                <div class="form-group col-xs-9">
+                    <input type="jiequ" class="form-control" style="width: 100%" id="index_location"
+                           placeholder="请输入小区 商圈 街区">
+                </div>
+                <div class="form-group col-xs-3" style="min-width: 76px">
+                    <button type="submit" style="width: 100%" class="btn text-right btn-default" role="button"
+                            data-toggle="collapse" href="#search_result" aria-expanded="false"
+                            aria-controls="search_result"><span class="glyphicon glyphicon-search"
+                                                                aria-hidden="true"></span></button>
+                </div>
+            </form>
+        </div>
+        <!--热门街区开始-->
+        <div class="container-fluid">
+            <span class="badge  ">理工大学</span>
+            <span class="badge  ">四川大学</span>
+            <span class="badge  ">西华大学</span>
+            <span class="badge  ">电子科大</span>
+            <span class="badge  ">成都信工</span>
+            <span class="badge  ">成都大学</span>
+            <span class="badge  ">四川师范</span>
+        </div>
+        <!--热门街区结束-->
     </div>
-</form>
-</div>
-    <!--热门街区开始-->
     <div class="container-fluid">
-      <span class="badge  ">理工大学</span>
-      <span class="badge  ">四川大学</span>
-      <span class="badge  ">西华大学</span>
-      <span class="badge  ">电子科大</span>
-      <span class="badge  ">成都信工</span>
-      <span class="badge  ">成都大学</span>
-      <span class="badge  ">四川师范</span>
-    </div>
- <!--热门街区结束-->
+        <div class="collapse " id="search_result">
+            <div class="well center-block">
+
+            </div>
+        </div>
     </div>
 </div>
 <!---查找房源结束-->
 
 <!--最新房源展示-->
 <div class="container-fluid">
-  <div class="page-header">
-  <h2 class="text-center">最新房源</h2>
-<div class="row">
-  <div class="col-md-3">
-    <div class=" house_info thumbnail">
-      <div class="img_border"><img class="img-responsive" src="{% static '/房间1.jpg' %}" alt="房间1"></div>
-      <div class="caption">
-        <h4>成都理工</h4>
-        <p>来自于十里彩云间，理工学子大家都懂的</p>
-        <p>租金： ￥1250</p>
-        <p>类型： 套三主卧</p>
-        <p>面积： 8㎡</p>
-        <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#" class="btn btn-default" role="button">我要租房</a></p>
-      </div>
+    <div class="page-header">
+        <h2 class="text-center">最新房源</h2>
+        <div><h3 class="text-left">合租</h3></div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class=" house_info thumbnail">
+                    <div class="img_border"><img class="img-responsive" src="{% static '/房间1.jpg' %}" alt="房间1"></div>
+                    <div class="caption">
+                        <h4>成都理工</h4>
+                        <p>来自于十里彩云间，理工学子大家都懂的</p>
+                        <p>租金： ￥1250</p>
+                        <p>类型： 套三主卧</p>
+                        <p>面积： 8㎡</p>
+                        <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#" class="btn btn-default"
+                                                                                       role="button">我要租房</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="house_info thumbnail">
+                    <div class="img_border"><img class="img-responsive" src="{% static '/房间2.jpg' %}" alt="房间2"></div>
+                    <div class="caption">
+                        <h4>四川大学</h4>
+                        <p>四川大学门口的酒吧一条街</p>
+                        <p>租金： ￥1250</p>
+                        <p>类型： 套三主卧</p>
+                        <p>面积： 8㎡</p>
+                        <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#" class="btn btn-default"
+                                                                                       role="button">我要租房</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="house_info thumbnail">
+                    <div class="img_border"><img class="img-responsive" src="{% static '/房间3.jpg' %}" alt="房间3"></div>
+                    <div class="caption">
+                        <h4>西华大学</h4>
+                        <p>省体育馆附近的西华大学</p>
+                        <p>租金： ￥1250</p>
+                        <p>类型： 套三主卧</p>
+                        <p>面积： 8㎡</p>
+                        <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#" class="btn btn-default"
+                                                                                       role="button">我要租房</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="thumbnail">
+                    <div class="img_border"><img class="img-responsive" src="{% static '/房间4.jpg' %}" alt="房间4"></div>
+                    <div class="caption">
+                        <h4>电子科大</h4>
+                        <p>建设路的电子科大</p>
+                        <p>租金： ￥1250</p>
+                        <p>类型： 套三主卧</p>
+                        <p>面积： 8㎡</p>
+                        <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#" class="btn btn-default"
+                                                                                       role="button">我要租房</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div><h3 class="text-left">整租</h3></div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class=" house_info thumbnail">
+                    <div class="img_border"><img class="img-responsive" src="{% static '/房间1.jpg' %}" alt="房间1"></div>
+                    <div class="caption">
+                        <h4>成都理工</h4>
+                        <p>来自于十里彩云间，理工学子大家都懂的</p>
+                        <p>租金： ￥1250</p>
+                        <p>类型： 套三主卧</p>
+                        <p>面积： 8㎡</p>
+                        <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#" class="btn btn-default"
+                                                                                       role="button">我要租房</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="house_info thumbnail">
+                    <div class="img_border"><img class="img-responsive" src="{% static '/房间2.jpg' %}" alt="房间2"></div>
+                    <div class="caption">
+                        <h4>四川大学</h4>
+                        <p>四川大学门口的酒吧一条街</p>
+                        <p>租金： ￥1250</p>
+                        <p>类型： 套三主卧</p>
+                        <p>面积： 8㎡</p>
+                        <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#" class="btn btn-default"
+                                                                                       role="button">我要租房</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="house_info thumbnail">
+                    <div class="img_border"><img class="img-responsive" src="{% static '/房间3.jpg' %}" alt="房间3"></div>
+                    <div class="caption">
+                        <h4>西华大学</h4>
+                        <p>省体育馆附近的西华大学</p>
+                        <p>租金： ￥1250</p>
+                        <p>类型： 套三主卧</p>
+                        <p>面积： 8㎡</p>
+                        <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#" class="btn btn-default"
+                                                                                       role="button">我要租房</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="thumbnail">
+                    <div class="img_border"><img class="img-responsive" src="{% static '/房间4.jpg' %}" alt="房间4"></div>
+                    <div class="caption">
+                        <h4>电子科大</h4>
+                        <p>建设路的电子科大</p>
+                        <p>租金： ￥1250</p>
+                        <p>类型： 套三主卧</p>
+                        <p>面积： 8㎡</p>
+                        <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#" class="btn btn-default"
+                                                                                       role="button">我要租房</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="col-md-3">
-    <div class="house_info thumbnail">
-      <div class="img_border"><img class="img-responsive" src="{% static '/房间2.jpg' %}" alt="房间2"></div>
-      <div class="caption">
-        <h4>四川大学</h4>
-        <p>四川大学门口的酒吧一条街</p>
-        <p>租金： ￥1250</p>
-        <p>类型： 套三主卧</p>
-        <p>面积： 8㎡</p>
-        <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#" class="btn btn-default" role="button">我要租房</a></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="house_info thumbnail">
-      <div class="img_border"><img class="img-responsive" src="{% static '/房间3.jpg' %}" alt="房间3"></div>
-      <div class="caption">
-        <h4>西华大学</h4>
-        <p>省体育馆附近的西华大学</p>
-        <p>租金： ￥1250</p>
-        <p>类型： 套三主卧</p>
-        <p>面积： 8㎡</p>
-        <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#" class="btn btn-default" role="button">我要租房</a></p>
-      </div>
-    </div>
-  </div>
-    <div class="col-md-3">
-    <div class="thumbnail">
-      <div class="img_border"><img class="img-responsive"  src="{% static '/房间4.jpg' %}" alt="房间4"></div>
-      <div class="caption">
-        <h4>电子科大</h4>
-        <p>建设路的电子科大</p>
-        <p>租金： ￥1250</p>
-        <p>类型： 套三主卧</p>
-        <p>面积： 8㎡</p>
-        <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#" class="btn btn-default" role="button">我要租房</a></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="thumbnail">
-      <div class="img_border"><img class="img-responsive" src="{% static '/房间5.jpg' %}" alt="房间5"></div>
-      <div class="caption">
-        <h4>成都理工</h4>
-        <p>来自于十里彩云间，理工学子大家都懂的</p>
-        <p>租金： ￥1250</p>
-        <p>类型： 套三主卧</p>
-        <p>面积： 8㎡</p>
-        <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#" class="btn btn-default" role="button">我要租房</a></p>
-      </div>
-    </div>
-  </div>
-</div>
-      </div>
 </div>
 <!---最新房源展示-->
 
 <!--最新房源展示-->
 <div class="container-fluid">
-  <div class="page-header">
-  <h2 class="text-center">四大支持</h2>
-      <div class="container-fluid">
-          <div class="row">
-              <div class="col-md-6 col-xs-12">
-                  <div class="row">
-                      <div class="col-xs-6 ">
-                          <div class="four_support_border ">
-                           <img class="img-responsive center-block " src="{% static '/四大支持1.jpg' %}" alt="四大支持1">
-                          </div>
-                      </div>
-                      <div class="col-xs-6 ">
-                         <div class="four_support_border">
-                           <img class="img-responsive center-block " src="{% static '/四大支持2.jpg' %}" alt="四大支持2">
-                          </div>
-                      </div>
-                  </div>
-                  </div>
-              <div class="col-md-6 col-xs-12 four_support_info">
-                  <div class="container-fluid">
-                  <div class="row">
-                      <div class="col-md-12 col-xs-6">
+    <div class="page-header">
+        <h2 class="text-center">四大支持</h2>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-6 ">
+                            <div class="four_support_border ">
+                                <img class="img-responsive center-block " src="{% static '/四大支持1.jpg' %}" alt="四大支持1">
+                            </div>
+                        </div>
+                        <div class="col-xs-6 ">
+                            <div class="four_support_border">
+                                <img class="img-responsive center-block " src="{% static '/四大支持2.jpg' %}" alt="四大支持2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12 four_support_info">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12 col-xs-6">
 
-                          <h4><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>正规合法</h4>
-                            <p>经广东省金融办批准，广东省经济信息化委员会审核验收</p>
-                      </div>
-                      <div class="col-md-12 col-xs-6">
+                                <h4><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>正规合法</h4>
+                                <p>经广东省金融办批准，广东省经济信息化委员会审核验收</p>
+                            </div>
+                            <div class="col-md-12 col-xs-6">
 
-                          <h4><span class="glyphicon glyphicon-yen" aria-hidden="true"></span>资金安全</h4>
-                            <p>资金由中国银行、中国农业银行三方存管，出入金安全便捷</p>
-                      </div>
-                  </div>
-                  </div>
-              </div>
-           <div class="col-md-6 col-xs-12">
-               <div class="row">
-                      <div class="col-xs-6 ">
-                          <div class="four_support_border">
-                           <img class="img-responsive center-block " src="{% static '/四大支持3.jpg' %}" alt="四大支持3">
-                          </div>
-                      </div>
-                      <div class="col-xs-6 ">
-                         <div class="four_support_border">
-                           <img class="img-responsive center-block " src="{% static '/四大支持4.jpg' %}" alt="四大支持4">
-                          </div>
-                      </div>
-                  </div>
-                  </div>
-              <div class="col-md-6 col-xs-12 four_support_info">
-                  <div class="container-fluid">
-                  <div class="row">
-                      <div class="col-md-12 col-xs-6">
-                          <h4><span class="glyphicon glyphicon-link" aria-hidden="true"></span>运营支持</h4>
-                            <p>秉承互联网＋交易创新政策，打造领先的房地产交易平台</p>
-                      </div>
-                      <div class="col-md-12 col-xs-6">
-                          <h4><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>实力保障</h4>
-                            <p>雄厚资本支持，卓越运营团队，创新交易机制，强大服务系统</p>
-                      </div>
-                  </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+                                <h4><span class="glyphicon glyphicon-yen" aria-hidden="true"></span>资金安全</h4>
+                                <p>资金由中国银行、中国农业银行三方存管，出入金安全便捷</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-6 ">
+                            <div class="four_support_border">
+                                <img class="img-responsive center-block " src="{% static '/四大支持3.jpg' %}" alt="四大支持3">
+                            </div>
+                        </div>
+                        <div class="col-xs-6 ">
+                            <div class="four_support_border">
+                                <img class="img-responsive center-block " src="{% static '/四大支持4.jpg' %}" alt="四大支持4">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12 four_support_info">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12 col-xs-6">
+                                <h4><span class="glyphicon glyphicon-link" aria-hidden="true"></span>运营支持</h4>
+                                <p>秉承互联网＋交易创新政策，打造领先的房地产交易平台</p>
+                            </div>
+                            <div class="col-md-12 col-xs-6">
+                                <h4><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>实力保障</h4>
+                                <p>雄厚资本支持，卓越运营团队，创新交易机制，强大服务系统</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
@@ -282,17 +347,22 @@
     <div class="container-fluid">
         <div style="background:url('{% static '大背景1.jpg' %}')  center center no-repeat;background-size: cover; width: 100%">
             <div class="row">
-                <div class="col-xs-6 text-center gongsi_info" ><p style="padding-left: 15px">Realestate有限公司是广州房产租赁行业中的一支新力军。公司人才鼎盛，资金实力雄厚，决心打造房产租赁j加盟行业的第一品牌，员工团结一致向这一目标迈进。秉乘“口碑相传、永续经营”的经营
-理念。公司主要致力于国内外高尚住宅、别墅、园林、写字楼、商铺、酒店等租赁服务。</p></div>
-                <div class="col-xs-6 text-center gongsi_info" > </div>
+                <div class="col-xs-6 text-center gongsi_info"><p style="padding-left: 15px">
+                    Realestate有限公司是广州房产租赁行业中的一支新力军。公司人才鼎盛，资金实力雄厚，决心打造房产租赁j加盟行业的第一品牌，员工团结一致向这一目标迈进。秉乘“口碑相传、永续经营”的经营
+                    理念。公司主要致力于国内外高尚住宅、别墅、园林、写字楼、商铺、酒店等租赁服务。</p></div>
+                <div class="col-xs-6 text-center gongsi_info"></div>
             </div>
         </div>
         <div style="background:url('{% static '大背景2.jpg' %}') center center no-repeat;background-size: cover; width: 100%">
             <div class="row">
-                <div class="col-xs-3 text-center gongsi_info" > <p>1689</p><p>稳定房源</p></div>
-                <div class="col-xs-3 text-center gongsi_info" ><p>328</p><p>贴心管家</p></div>
-                <div class="col-xs-3 text-center gongsi_info"  ><p>120</p><p>渠道代理</p></div>
-                <div class="col-xs-3 text-center gongsi_info"  ><p>19</p><p>注册客户</p></div>
+                <div class="col-xs-3 text-center gongsi_info"><p>1689</p>
+                    <p>稳定房源</p></div>
+                <div class="col-xs-3 text-center gongsi_info"><p>328</p>
+                    <p>贴心管家</p></div>
+                <div class="col-xs-3 text-center gongsi_info"><p>120</p>
+                    <p>渠道代理</p></div>
+                <div class="col-xs-3 text-center gongsi_info"><p>19</p>
+                    <p>注册客户</p></div>
             </div>
         </div>
         <!--放置内容-->
@@ -307,21 +377,24 @@
             <h2 class="text-center">加盟流程</h2>
             <div class="row">
                 <div class="col-xs-3">
-                    <div >
+                    <div>
                         <img class="img-responsive center-block" src="{% static '入住平台.png' %}">
                         <h4 class="text-danger  text-center">01入住平台 </h4>
                     </div>
                 </div>
                 <div class="col-xs-3">
-                    <div><img  class="img-responsive center-block" src="{% static '配置房源.png' %}"><h4 class="text-info  text-center"> 02配置房源 </h4></div>
+                    <div><img class="img-responsive center-block" src="{% static '配置房源.png' %}"><h4
+                            class="text-info  text-center"> 02配置房源 </h4></div>
                 </div>
                 <div class="col-xs-3">
-                <div>
-                        <img class="img-responsive center-block" src="{% static '渠道招商.png' %}"><h4 class="text-success text-center"> 03渠道招商 </h4>
-                </div>
+                    <div>
+                        <img class="img-responsive center-block" src="{% static '渠道招商.png' %}"><h4
+                            class="text-success text-center"> 03渠道招商 </h4>
+                    </div>
                 </div>
                 <div class="col-xs-3">
-                    <div> <img class="img-responsive center-block" src="{% static '赚取利润.png' %}"><h4 class="text-warning text-center"> 04赚取利润 </h4></div>
+                    <div><img class="img-responsive center-block" src="{% static '赚取利润.png' %}"><h4
+                            class="text-warning text-center"> 04赚取利润 </h4></div>
                 </div>
             </div>
         </div>
@@ -333,14 +406,9 @@
 <!--公司简介-->
 <div class="jieshu">
     <div class="container-fluid">
-    <div class="text-center">
-        <dl class="dl-horizontal " style="background: darkgrey">
-            <dt>联系QQ:</dt><dd>258506508</dd>
-            <dt>手机号码:</dt><dd>130000000</dd>
-            <dt>联系邮箱:</dt><dd>contact@fkadjkhsf.co</dd>
-            <dt>座机联系:</dt><dd>020</dd>
-        </dl>
-    </div>
+        <div class="alert bottom">
+            <div class="text-center">Copyright © 2017-2017 海骄社区有限公司. All Rights Reserved 蜀ICP备XXXXXXX号</div>
+        </div>
     </div>
 </div>
 
