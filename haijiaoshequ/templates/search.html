@@ -7,7 +7,7 @@
     <title>{{ name }} </title>
     {% load static %}
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-    <!--<link rel="stylesheet" href="{% static '/index.css' %}">--->
+
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <!--
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -39,9 +39,10 @@
             font-size: 100%;
         }
     </style>
+       <link rel="stylesheet" href="{% static '/index.css' %}">
 </head>
 <body>
-<div class="container-fluid">
+
     <nav class="navbar navbar-default navbar-static ">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -70,7 +71,7 @@
         </div><!-- /.container-fluid -->
     </nav>
 
-
+<div class="container-fluid">
     <!--查找最新房源-->
     <div>
         <!-- Nav tabs -->
@@ -83,7 +84,7 @@
         <div class="tab-content">
             <div id="search_location" role="tabpanel" class="tab-pane active">
                 <div class="page-header">
-                    <div class="container-fluid">
+                    <div>
                         <form class="form-inline row">
                             <div class="form-group col-xs-9">
                                 <input type="jiequ" class="form-control" style="width: 100%" id="index_location"
@@ -99,7 +100,7 @@
                         </form>
                     </div>
                     <!--热门街区开始-->
-                    <div class="container-fluid">
+                    <div  >
                         <span class="badge  ">理工大学</span>
                         <span class="badge  ">四川大学</span>
                         <span class="badge  ">西华大学</span>
@@ -112,7 +113,7 @@
                     <!--区域选项-->
                     <div>
                         <p></p>
-                        <div id="quyu" class=" container-fluid   ">
+                        <div id="quyu" >
                             <p></p>
                             <span class=" label label-primary label-quyu-primary">区域</span>
                             <a class="  text-center">全部</a>
@@ -141,7 +142,7 @@
                         </div>
                         <!--区域选项-->
                         <!--价格选项-->
-                        <div id="jiage" class=" container-fluid   ">
+                        <div id="jiage"  >
                             <p></p>
                             <span class=" label label-primary label-quyu-primary">价格</span>
                             <a class="text-center">全部</a>
@@ -152,29 +153,29 @@
                         </div>
                         <!--价格选项-->
                         <!--户型选项-->
-                        <div id="huxing" class=" container-fluid   ">
+                        <div id="huxing"  >
                             <p></p>
                             <span class=" label label-primary label-quyu-primary">户型</span>
                             <a class="text-center">全部</a>
-                            <a class="label label-info label-quyu-primary">普通单件</a>
+                            <a class="label label-info label-quyu-primary">单间</a>
                             <a class=" ">主卧带独卫</a>
-                            <a class=" ">标间小套一</a>
+                            <a class=" ">套一</a>
                             <a class=" ">整租</a>
                             <p></p>
                         </div>
                         <!--入住选项-->
-                        <div id="ruzhu" class=" container-fluid   ">
+                        <div id="ruzhu"  >
                             <p></p>
                             <span class=" label label-primary label-quyu-primary">入住</span>
                             <a class="text-center">全部</a>
-                            <a class="label label-info label-quyu-primary">可立即入住</a>
-                            <a class=" ">一周内可入住的</a>
-                            <a class=" ">两周内可入住</a>
+                            <a class="label label-info label-quyu-primary">立即入住</a>
+                            <a class=" ">一周入住</a>
+                            <a class=" ">两周入住</a>
                             <p></p>
                         </div>
                         <!--入住选项-->
                         <!--室友选项-->
-                        <div id="ruzhu" class=" container-fluid   ">
+                        <div id="ruzhu"  >
                             <p></p>
                             <span class=" label label-primary label-quyu-primary">室友</span>
                             <a class="text-center">无所谓</a>
@@ -189,7 +190,7 @@
             </div>
 
             <!--地图找房界面-->
-            <div id="search_map" class="container-fluid tab-pane" role="tabpanel">
+            <div id="search_map" class="tab-pane" role="tabpanel">
                 <div class="page-header">
                     <div class=" " id="">
                         <div class="center-block" id="allmap" style="max-width: 90%">
@@ -349,6 +350,16 @@
             </div>
         </div>
         <!--查找结果-->
+    </div>
+</div>
+
+
+<!--公司简介-->
+<div class="jieshu">
+    <div class="container-fluid">
+        <div class="alert bottom">
+            <div class="text-center">Copyright © 2017-2017 海骄社区有限公司. All Rights Reserved 蜀ICP备XXXXXXX号</div>
+        </div>
     </div>
 </div>
 
