@@ -28,7 +28,10 @@ img
 {
     height: 250px;
 }
-
+.apply_img
+{
+    height: 250px;
+}
 
 .house_info
 {
@@ -83,7 +86,7 @@ img
 }
 
 .bottom {
-    background-color: #30aaa0;
+    background-color: #337ab7;
     overflow: hidden;
 }
 
@@ -93,5 +96,31 @@ img
 white-space:nowrap;          /* 不换行 */
 overflow:hidden;               /* 内容超出宽度时隐藏超出部分的内容 */
 text-overflow:ellipsis;         /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+}
+
+
+.search_link
+{
+    display: inline-block;
+    width: 85px;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.option_div1
+{
+    float: left;
+        margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.option_div2
+{
+   float: inherit;
+    display: table;
+        margin-left: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 

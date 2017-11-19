@@ -39,37 +39,37 @@
             font-size: 100%;
         }
     </style>
-       <link rel="stylesheet" href="{% static '/index.css' %}">
+    <link rel="stylesheet" href="{% static '/index.css' %}">
 </head>
 <body>
 
-    <nav class="navbar navbar-default navbar-static ">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">海骄社区</a>
-            </div>
+<nav class="navbar navbar-default navbar-static ">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">海骄社区</a>
+        </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
 
-                <ul class="nav navbar-nav navbar-right nav-tabs " role="tablist">
-                    <li><a href="#zuixinfangyuan">最新房源</a></li>
-                    <li class="active"><a href="/search">我要租房</a></li>
-                    <li><a href="/apply">房东加盟</a></li>
-                    <li><a href="#gerenzhongxin">个人中心</a></li>
-                </ul>
+            <ul class="nav navbar-nav navbar-right nav-tabs " role="tablist">
+                <li><a href="#zuixinfangyuan">最新房源</a></li>
+                <li class="active"><a href="/search">我要租房</a></li>
+                <li><a href="/apply">房东加盟</a></li>
+                <li><a href="#gerenzhongxin">个人中心</a></li>
+            </ul>
 
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
 
 <div class="container-fluid">
     <!--查找最新房源-->
@@ -100,7 +100,7 @@
                         </form>
                     </div>
                     <!--热门街区开始-->
-                    <div  >
+                    <div>
                         <span class="badge  ">理工大学</span>
                         <span class="badge  ">四川大学</span>
                         <span class="badge  ">西华大学</span>
@@ -112,77 +112,94 @@
                     <!--热门街区结束-->
                     <!--区域选项-->
                     <div>
-                        <p></p>
-                        <div id="quyu" >
-                            <p></p>
-                            <span class=" label label-primary label-quyu-primary">区域</span>
-                            <a class="  text-center">全部</a>
-                            <a class="label label-info label-quyu-primary" role="button"
-                               data-toggle="collapse" href="#quyu_detail"
-                               aria-expanded="false"
-                               aria-controls="quyu_detail"
-                               href="#quyu_detail">锦江区</a>
+                        <div id="quyu">
+                            <div class="option_div1">
+                                <span class=" label label-primary label-quyu-primary">区域:</span>
+                            </div>
+                            <div class="option_div2">
+                                <a class="search_link text-center"> 全部</a>
+                                <a class="search_link label label-info label-quyu-primary" role="button"
+                                   data-toggle="collapse" href="#quyu_detail"
+                                   aria-expanded="false"
+                                   aria-controls="quyu_detail"
+                                   href="#quyu_detail">锦江区</a>
+                                <a class="search_link">龙泉驿区</a>
+                                <a class="search_link">成华区</a>
+                            </div>
+                        </div>
 
-                            <a class=" ">龙泉驿区</a>
-                            <a class=" ">成华区</a>
-                            <!--区域细分选项-->
-                            <div class="collapse " id="quyu_detail">
-                                <div class="center-block">
-                                    <div class="container-fluid">
-                                        <p></p>
-                                        <a class="label label-info label-quyu-primary ">全部</a>
-                                        <a class=" ">川师大</a>
-                                        <a class=" ">成都理工</a>
-                                        <a class=" ">万达广场</a>
-                                    </div>
+
+                        <!--区域细分选项-->
+                        <div class="collapse " id="quyu_detail">
+                            <div class="center-block">
+                                <div class="container-fluid">
+
+                                    <a class="search_link label label-info label-quyu-primary ">全部</a>
+                                    <a class=" search_link">川师大</a>
+                                    <a class=" search_link">成都理工</a>
+                                    <a class=" search_link">万达广场</a>
                                 </div>
                             </div>
-                            <p></p>
-                            <!--区域细分选项-->
                         </div>
-                        <!--区域选项-->
+
+                        <!--区域细分选项-->
+                    </div>
+                    <!--区域选项-->
+                    <div>
                         <!--价格选项-->
-                        <div id="jiage"  >
-                            <p></p>
-                            <span class=" label label-primary label-quyu-primary">价格</span>
-                            <a class="text-center">全部</a>
-                            <a class="label label-info label-quyu-primary"> 500-700</a>
-                            <a class=" "> 700-1000</a>
-                            <a class=" "> 1000-1500</a>
-                            <p></p>
+                        <div id="jiage">
+
+                            <div class="option_div1">
+                                <span class=" label label-primary label-quyu-primary">价格:</span>
+                            </div>
+                            <div class="option_div2">
+                                <a class="search_link text-center">全部</a>
+                                <a class="search_link  label label-info label-quyu-primary">500~700</a>
+                                <a class="search_link label label-info label-quyu-primary">700~1500</a>
+                                <a class="search_link label label-info label-quyu-primary">1000~1500</a>
+                            </div>
+
                         </div>
                         <!--价格选项-->
                         <!--户型选项-->
-                        <div id="huxing"  >
-                            <p></p>
-                            <span class=" label label-primary label-quyu-primary">户型</span>
-                            <a class="text-center">全部</a>
-                            <a class="label label-info label-quyu-primary">单间</a>
-                            <a class=" ">主卧带独卫</a>
-                            <a class=" ">套一</a>
-                            <a class=" ">整租</a>
-                            <p></p>
+                        <div id="huxing">
+                            <div class="option_div1">
+                                <span class=" label label-primary label-quyu-primary">户型:</span>
+                            </div>
+                            <div class="option_div2">
+                                <a class="search_link text-center">全部</a>
+                                <a class="search_link label label-info label-quyu-primary">单间</a>
+                                <a class=" search_link label label-info label-quyu-primary">主卧独卫</a>
+                                <a class=" search_link">套一</a>
+                                <a class="search_link ">整租</a>
+                            </div>
                         </div>
                         <!--入住选项-->
-                        <div id="ruzhu"  >
-                            <p></p>
-                            <span class=" label label-primary label-quyu-primary">入住</span>
-                            <a class="text-center">全部</a>
-                            <a class="label label-info label-quyu-primary">立即入住</a>
-                            <a class=" ">一周入住</a>
-                            <a class=" ">两周入住</a>
-                            <p></p>
+                        <div id="ruzhu">
+                            <div class="option_div1">
+                                <span class="label label-primary label-quyu-primary">入住:</span>
+                            </div>
+                            <div class="option_div2">
+                                <a class="search_link text-center">全部</a>
+                                <a class="search_link label label-info label-quyu-primary">立即入住</a>
+                                <a class="search_link ">一周入住</a>
+                                <a class="search_link ">两周入住</a>
+                            </div>
                         </div>
                         <!--入住选项-->
                         <!--室友选项-->
-                        <div id="ruzhu"  >
-                            <p></p>
-                            <span class=" label label-primary label-quyu-primary">室友</span>
-                            <a class="text-center">无所谓</a>
-                            <a class="label label-info label-quyu-primary">全是妹子</a>
-                            <a class=" ">全是汉子</a>
-                            <a class=" ">爱情公寓</a>
-                            <p></p>
+                        <div id="shiyou">
+                            <div class="option_div1">
+                                <span class=" label label-primary label-quyu-primary">室友:</span>
+                            </div>
+                            <div class="option_div2">
+                                <a class="search_link text-center text-info label label-info label-quyu-primary">无所谓</a>
+                                <a class="search_link label label-info label-quyu-primary">全是妹子</a>
+                                <a class="search_link label label-info label-quyu-primary">全是汉子</a>
+                                <a class="search_link label label-info label-quyu-primary">爱情公寓</a>
+                                <a class="search_link label label-info label-quyu-primary">全是汉子</a>
+                                <a class="search_link label label-info label-quyu-primary">爱情公寓</a>
+                            </div>
                         </div>
                         <!--室友选项-->
                     </div>
@@ -200,147 +217,148 @@
             </div>
             <!--地图找房界面-->
         </div>
-        <div>
-            <!--查找结果-->
-            <div id="search_result">
-                <div><h3 class="text-left">合租</h3></div>
+    </div>
+    <div>
+        <!--查找结果-->
+        <div id="search_result">
+            <div><h4 class="text-left">合租</h4></div>
 
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
-                        <div class="thumbnail">
-                            <div class="img_border"><img class="img-responsive" src="{% static '/房间1.jpg' %}" alt="房间1">
-                            </div>
-                            <div class="caption">
-                                <h4>成都理工</h4>
-                                <p  class="fangwu_info_too_long">来自于十里彩云间，理工学子大家都懂的</p>
-                                <p>租金： ￥1250</p>
-                                <p>类型： 套三主卧</p>
-                                <p>面积： 8㎡</p>
-                                <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#"
-                                                                                               class="btn btn-default"
-                                                                                               role="button">我要租房</a>
-                                </p>
-                            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
+                    <div class="thumbnail">
+                        <div class="img_border"><img class="img-responsive" src="{% static '/房间1.jpg' %}" alt="房间1">
                         </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3  ">
-                        <div class="  thumbnail">
-                            <div class="img_border"><img class="img-responsive" src="{% static '/房间2.jpg' %}" alt="房间2">
-                            </div>
-                            <div class="caption">
-                                <h4>四川大学</h4>
-                                <p  class="fangwu_info_too_long">四川大学门口的酒吧一条街</p>
-                                <p>租金： ￥1250</p>
-                                <p>类型： 套三主卧</p>
-                                <p>面积： 8㎡</p>
-                                <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#"
-                                                                                               class="btn btn-default"
-                                                                                               role="button">我要租房</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
-                        <div class="  thumbnail">
-                            <div class="img_border"><img class="img-responsive" src="{% static '/房间3.jpg' %}" alt="房间3">
-                            </div>
-                            <div class="caption">
-                                <h4>西华大学</h4>
-                                <p  class="fangwu_info_too_long">省体育馆附近的西华大学</p>
-                                <p>租金： ￥1250</p>
-                                <p>类型： 套三主卧</p>
-                                <p>面积： 8㎡</p>
-                                <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#"
-                                                                                               class="btn btn-default"
-                                                                                               role="button">我要租房</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
-                        <div class="thumbnail">
-                            <div class="img_border"><img class="img-responsive" src="{% static '/房间4.jpg' %}" alt="房间4">
-                            </div>
-                            <div class="caption">
-                                <h4>电子科大</h4>
-                                <p  class="fangwu_info_too_long">建设路的电子科大</p>
-                                <p>租金： ￥1250</p>
-                                <p>类型： 套三主卧</p>
-                                <p>面积： 8㎡</p>
-                                <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#"
-                                                                                               class="btn btn-default"
-                                                                                               role="button">我要租房</a>
-                                </p>
-                            </div>
+                        <div class="caption">
+                            <h5>成都理工</h5>
+                            <p class="fangwu_info_too_long">来自于十里彩云间，理工学子大家都懂的</p>
+                            <p>租金： ￥1250</p>
+                            <p>类型： 套三主卧</p>
+                            <p>面积： 8㎡</p>
+                            <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#"
+                                                                                           class="btn btn-default"
+                                                                                           role="button">我要租房</a>
+                            </p>
                         </div>
                     </div>
                 </div>
-
-                <div><h3 class="text-left">整租</h3></div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
-                        <div class=" thumbnail">
-                            <div class="img_border"><img class="img-responsive" src="{% static '/房间1.jpg' %}" alt="房间1">
-                            </div>
-                            <div class="caption">
-                                <h4>成都理工</h4>
-                                <p  class="fangwu_info_too_long">来自于十里彩云间，理工学子大家都懂的</p>
-                                <p>租金： ￥1250</p>
-                                <p>类型： 套三主卧</p>
-                                <p>面积： 8㎡</p>
-                                <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#"
-                                                                                               class="btn btn-default"
-                                                                                               role="button">我要租房</a>
-                                </p>
-                            </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3  ">
+                    <div class="  thumbnail">
+                        <div class="img_border"><img class="img-responsive" src="{% static '/房间2.jpg' %}" alt="房间2">
+                        </div>
+                        <div class="caption">
+                            <h5>四川大学</h5>
+                            <p class="fangwu_info_too_long">四川大学门口的酒吧一条街</p>
+                            <p>租金： ￥1250</p>
+                            <p>类型： 套三主卧</p>
+                            <p>面积： 8㎡</p>
+                            <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#"
+                                                                                           class="btn btn-default"
+                                                                                           role="button">我要租房</a>
+                            </p>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
-                        <div class="  thumbnail">
-                            <div class="img_border"><img class="img-responsive" src="{% static '/房间2.jpg' %}" alt="房间2">
-                            </div>
-                            <div class="caption">
-                                <h4>四川大学</h4>
-                                <p  class="fangwu_info_too_long">四川大学门口的酒吧一条街</p>
-                                <p>租金： ￥1250</p>
-                                <p>类型： 套三主卧</p>
-                                <p>面积： 8㎡</p>
-                                <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#"
-                                                                                               class="btn btn-default"
-                                                                                               role="button">我要租房</a>
-                                </p>
-                            </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
+                    <div class="  thumbnail">
+                        <div class="img_border"><img class="img-responsive" src="{% static '/房间3.jpg' %}" alt="房间3">
+                        </div>
+                        <div class="caption">
+                            <h5>西华大学</h5>
+                            <p class="fangwu_info_too_long">省体育馆附近的西华大学</p>
+                            <p>租金： ￥1250</p>
+                            <p>类型： 套三主卧</p>
+                            <p>面积： 8㎡</p>
+                            <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#"
+                                                                                           class="btn btn-default"
+                                                                                           role="button">我要租房</a>
+                            </p>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
-                        <div class="  thumbnail">
-                            <div class="img_border"><img class="img-responsive" src="{% static '/房间3.jpg' %}" alt="房间3">
-                            </div>
-                            <div class="caption">
-                                <h4>西华大学</h4>
-                                <p  class="fangwu_info_too_long">省体育馆附近的西华大学</p>
-                                <p>租金： ￥1250</p>
-                                <p>类型： 套三主卧</p>
-                                <p>面积： 8㎡</p>
-                                <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#"
-                                                                                               class="btn btn-default"
-                                                                                               role="button">我要租房</a>
-                                </p>
-                            </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
+                    <div class="thumbnail">
+                        <div class="img_border"><img class="img-responsive" src="{% static '/房间4.jpg' %}" alt="房间4">
+                        </div>
+                        <div class="caption">
+                            <h5>电子科大</h5>
+                            <p class="fangwu_info_too_long">建设路的电子科大</p>
+                            <p>租金： ￥1250</p>
+                            <p>类型： 套三主卧</p>
+                            <p>面积： 8㎡</p>
+                            <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#"
+                                                                                           class="btn btn-default"
+                                                                                           role="button">我要租房</a>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
 
-        <!--查找结果-->
+            <div><h4 class="text-left">整租</h4></div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
+                    <div class=" thumbnail">
+                        <div class="img_border"><img class="img-responsive" src="{% static '/房间1.jpg' %}" alt="房间1">
+                        </div>
+                        <div class="caption">
+                            <h5>成都理工</h5>
+                            <p class="fangwu_info_too_long">来自于十里彩云间，理工学子大家都懂的</p>
+                            <p>租金： ￥1250</p>
+                            <p>类型： 套三主卧</p>
+                            <p>面积： 8㎡</p>
+                            <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#"
+                                                                                           class="btn btn-default"
+                                                                                           role="button">我要租房</a>
+                            </p>
+                        </div>
                     </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
+                    <div class="  thumbnail">
+                        <div class="img_border"><img class="img-responsive" src="{% static '/房间2.jpg' %}" alt="房间2">
+                        </div>
+                        <div class="caption">
+                            <h5>四川大学</h5>
+                            <p class="fangwu_info_too_long">四川大学门口的酒吧一条街</p>
+                            <p>租金： ￥1250</p>
+                            <p>类型： 套三主卧</p>
+                            <p>面积： 8㎡</p>
+                            <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#"
+                                                                                           class="btn btn-default"
+                                                                                           role="button">我要租房</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
+                    <div class="  thumbnail">
+                        <div class="img_border"><img class="img-responsive" src="{% static '/房间3.jpg' %}" alt="房间3">
+                        </div>
+                        <div class="caption">
+                            <h5>西华大学</h5>
+                            <p class="fangwu_info_too_long">省体育馆附近的西华大学</p>
+                            <p>租金： ￥1250</p>
+                            <p>类型： 套三主卧</p>
+                            <p>面积： 8㎡</p>
+                            <p><a href="#" class="btn btn-primary" role="button">详情</a> <a href="#"
+                                                                                           class="btn btn-default"
+                                                                                           role="button">我要租房</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--查找结果-->
     </div>
+</div>
 </div>
 
 
 <!--公司简介-->
 <div class="jieshu">
-    <div  >
+    <div>
         <div class="alert bottom">
             <div class="text-center">Copyright © 2017-2017 海骄社区有限公司. All Rights Reserved 蜀ICP备XXXXXXX号</div>
         </div>
