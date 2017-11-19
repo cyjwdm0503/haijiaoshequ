@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>{{ name }} </title>
+    {% load static %}
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!--
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <!--
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    -->
+    <!---<link rel="stylesheet" href="../static/bootstrap/css/bootstrap-theme.min.css" >
+
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <!--
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    -->
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %} "></script>
+    <link rel="stylesheet" href="{% static '/index.css' %}">
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-static-top ">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">海骄社区</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav navbar-right nav-tabs " role="tablist">
+                <li><a href="#zuixinfangyuan">最新房源</a></li>
+                <li><a href="/search">我要租房</a></li>
+                <li class="active"><a href="/apply">房东加盟</a></li>
+                <li><a href="#gerenzhongxin">个人中心</a></li>
+            </ul>
+
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<!--照片墙-->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active ">
+            <img class="img-responsive center-block " src="{% static '/房东加盟1.jpg' %}" alt="为闲置房房东 提供租赁整体解决方案">
+            <div class="carousel-caption">
+                为闲置房房东 提供租赁整体解决方案
+            </div>
+        </div>
+        <div class="item ">
+            <img class="img-responsive center-block " src="{% static '/房东加盟2.jpg' %}" alt="为闲置房房东 提供租赁整体解决方案">
+            <div class="carousel-caption">
+                为闲置房房东 提供租赁整体解决方案
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<!--照片墙结束--->
+
+<div class="container-fluid">
+    <!--加盟联系方式-->
+    <div>
+
+        <div style="padding-top: 20px">
+            <h4 class="text-info  text-center">现在有房出租找优客逸家，给包租还管服务 </h4>
+            <h5 class="text-info  text-center">不要再做忙碌的房东，经常找租客，找维修，找增值途径... </h5>
+        </div>
+        <div class="text-center">
+            <h2><span class="glyphicon glyphicon-search" aria-hidden="true"></span>400-000-0000</h2>
+        </div>
+        <div class="text-center">
+            <span class="btn btn-primary btn-lg">加入海骄社区</span>
+        </div>
+    </div>
+
+    <!----加盟方式----->
+    <!--加盟优势-->
+    <div id="jiamengyoushi">
+        <div class="page-header">
+            <h2 class="text-center">选择海骄社区的理由</h2>
+            <div class="row">
+                <div class="col-xs-4 ">
+                    <div class="align-right">
+                        <img class="img-responsive center-block" src="{% static '加盟优势1.png' %}">
+                        <h4 class="text-info  text-center">安全放心 </h4>
+                        <h5 class="text-info  text-center">租金保底（包租） </h5>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div><img class="img-responsive center-block" src="{% static '加盟优势2.png' %}"><h4
+                            class="text-info  text-center"> 稳定收益 </h4></div>
+                    <h5 class="text-info  text-center">30万房屋财险 </h5>
+                </div>
+                <div class="col-xs-4">
+                    <div>
+                        <img class="img-responsive center-block" src="{% static '加盟优势3.png' %}"><h4
+                            class="text-info text-center"> 省时省心 </h4>
+                        <h5 class="text-info  text-center">专业而完备的租后服务（包管） </h5>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--加盟优势-->
+
+    <!--加盟流程开始-->
+    <div id="jiamengliucheng">
+        <div class="page-header">
+            <h2 class="text-center">加盟流程</h2>
+            <div class="row">
+                <div class="col-sm-6 " >
+                    <h4 class="text-danger  text-center">意向沟通 > 上门实勘 > 签约合作 > 坐收租金</h4>
+                            <div class="text-center">
+            <span class="btn btn-primary btn-lg">加入海骄社区</span>
+                                <p></p>
+        </div>
+                </div>
+                <div class="col-sm-6 aligned">
+                    <div >
+                        <img  class="img-responsive" src="{% static '房东加盟伙伴.png' %}">
+                        <div style="    position:absolute; top: 5px;    width: 100%;">
+                                 <h4  class="text-center">
+                            现已有3482个房东加入海</h4><h4 class="text-center">椒成为我们的优质伙伴！
+                        </h4>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--加盟流程结束-->
+</div>
+
+
+<!--公司简介-->
+<div class="jieshu">
+    <div>
+        <div class="alert bottom">
+            <div class="text-center">Copyright © 2017-2017 海骄社区有限公司. All Rights Reserved 蜀ICP备XXXXXXX号</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

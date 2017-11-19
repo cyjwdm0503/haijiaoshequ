@@ -18,3 +18,9 @@ def search(request,name='haijiaoshequ'):
     context = {'name':name}
     return HttpResponse(template.render(context, request))
 # Create your views here.
+
+
+def apply(request,name='haijiaoshequ'):
+    template =  loader.get_template('apply.html');
+    context = {'name':name}
+    return HttpResponse(template.render(context, request))
