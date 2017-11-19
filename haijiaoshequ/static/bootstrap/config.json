@@ -118,10 +118,10 @@
     "@screen-xs": "480px",
     "@screen-xs-min": "@screen-xs",
     "@screen-phone": "@screen-xs-min",
-    "@screen-sm": "750px",
+    "@screen-sm": "550px",
     "@screen-sm-min": "@screen-sm",
     "@screen-tablet": "@screen-sm-min",
-    "@screen-md": "992px",
+    "@screen-md": "900px",
     "@screen-md-min": "@screen-md",
     "@screen-desktop": "@screen-md-min",
     "@screen-lg": "1200px",
@@ -431,5 +431,5 @@
     "scrollspy.js",
     "transition.js"
   ],
-  "customizerUrl": "http://v3.bootcss.com/customize/?id=3b657811e327bb7be8d559a850202c0f"
+  "customizerUrl": "http://v3.bootcss.com/customize/?id=772a79005d85b6291f58159aca04da82"
 }
