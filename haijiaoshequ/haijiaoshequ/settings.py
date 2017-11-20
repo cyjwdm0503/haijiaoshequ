@@ -26,7 +26,7 @@ SECRET_KEY = 'uc)9s6&k5vh6j7sp4hmgz#8wroiw!$evmo!7$m!ahx5prgx-hq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.103',r'www.haijoy.com',r'haijoy.com','111.231.218.142']
+ALLOWED_HOSTS = ['192.168.1.103',r'www.haijoy.com',r'haijoy.com','111.231.218.142','127.0.0.1']
 
 
 # Application definition

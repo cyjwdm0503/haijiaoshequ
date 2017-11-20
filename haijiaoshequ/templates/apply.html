@@ -69,14 +69,16 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-        <div class="item active" >
-            <img class=" " style="overflow-x: hidden"  src="{% static '/房东加盟1.jpg' %}" alt="为闲置房房东 提供租赁整体解决方案">
+        <div class="item active">
+            <img class=" " style="overflow-x: hidden" src="{% static '/房东加盟1.jpg' %}" alt="为闲置房房东 提供租赁整体解决方案">
+
             <div class="carousel-caption">
                 为闲置房房东 提供租赁整体解决方案
             </div>
         </div>
-        <div class="item "  >
+        <div class="item ">
             <img class=" " style="overflow-x: hidden" src="{% static '/房东加盟2.jpg' %}" alt="为闲置房房东 提供租赁整体解决方案">
+
             <div class="carousel-caption">
                 为闲置房房东 提供租赁整体解决方案
             </div>
@@ -101,13 +103,14 @@
 
         <div style="padding-top: 20px">
             <h4 class="text- text-info  text-center">现在有房出租找优客逸家，给包租还管服务 </h4>
+
             <p class="text-info  text-center">不要再做忙碌的房东，经常找租客，找维修，找增值途径... </p>
         </div>
         <div class="text-center">
             <h3><span class="glyphicon glyphicon-search" aria-hidden="false"></span>400-000-0000</h3>
         </div>
         <div class="text-center">
-            <span class="btn btn-primary btn-lg">加入海骄社区</span>
+            <span class="btn btn-primary " data-toggle="modal" data-target="#myModal">加入海骄社区</span>
         </div>
     </div>
 
@@ -116,11 +119,13 @@
     <div id="jiamengyoushi">
         <div class="page-header">
             <h3 class="text-center">选择海骄社区的理由</h3>
+
             <div class="row">
                 <div class="col-xs-4 ">
                     <div class="align-right">
                         <img class="img-responsive center-block" src="{% static '加盟优势1.png' %}">
                         <h4 class="text-info  text-center">安全放心 </h4>
+
                         <p class="text-info  text-center">租金保底（包租） </p>
                     </div>
                 </div>
@@ -133,6 +138,7 @@
                     <div>
                         <img class="img-responsive center-block" src="{% static '加盟优势3.png' %}"><h4
                             class="text-info text-center"> 省时省心 </h4>
+
                         <p class="text-info  text-center">专业而完备的租后服务（包管） </p>
                     </div>
                 </div>
@@ -147,23 +153,27 @@
     <div id="jiamengliucheng">
         <div class="page-header">
             <h3 class="text-center">加盟流程</h3>
+
             <div class="row">
-                <div class="col-sm-6 " >
+                <div class="col-sm-6 ">
                     <h5 class="text-danger  text-center">意向沟通 > 上门实勘 > 签约合作 > 坐收租金</h5>
-                            <div class="text-center">
-            <span class="btn btn-primary btn-lg">加入海骄社区</span>
-                                <p></p>
-        </div>
+
+                    <div class="text-center">
+                        <span class="btn btn-primary " data-toggle="modal" data-target="#myModal">加入海骄社区</span>
+
+                        <p></p>
+                    </div>
 
                 </div>
                 <div class="col-sm-6 aligned">
-                    <div >
+                    <div>
                         <p></p>
-                        <img  class="img-responsive" src="{% static '房东加盟伙伴.png' %}">
+                        <img class="img-responsive" src="{% static '房东加盟伙伴.png' %}">
+
                         <div style="    position:absolute; top: 5px;    width: 100%;">
-                                 <h5  class="text-center">
-                            现已有3482个房东加入海</h5><h5 class="text-center">椒成为我们的优质伙伴！
-                        </h5>
+                            <h4 class="text-center">
+                                现已有3482个房东加入海</h4><h4 class="text-center">椒成为我们的优质伙伴！
+                        </h4>
 
                         </div>
 
@@ -173,7 +183,49 @@
         </div>
     </div>
     <!--加盟流程结束-->
+
+    <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">房东加盟</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="name">姓名 </label>
+                <input type="email" class="form-control" id="name" placeholder="必填">
+            </div>
+            <div class="form-group">
+                <label for="phone">联系电话</label>
+                <input type="password" class="form-control" id="phone" placeholder="必填">
+            </div>
+            <div class="form-group">
+                <label for="city">所属城市</label>
+                <select id='city' class="form-control">
+                    <option>成都</option>
+                    <option>安岳</option>
+                    <option>大面镇</option>
+                    <option>龙泉驿</option>
+                </select>
+            </div>
+             <div class="form-group">
+                <label for="detail">房屋概况</label>
+                <textarea class="form-control" rows="3" id="detail"></textarea>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary">提交</button>
+      </div>
+    </div>
+  </div>
 </div>
+
+
 
 
 <!--公司简介-->
