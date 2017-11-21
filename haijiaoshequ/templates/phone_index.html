@@ -27,67 +27,117 @@
     -->
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %} "></script>
     <link rel="stylesheet" href="{% static '/index.css' %}">
+    <link rel="stylesheet" href="{% static '/range/css/jquery.range.css' %}">
+
 </head>
 <body>
 
-<div class="container-fluid">
+<div class="container-fluid phone_body">
     <div class="row phone_header">
 
-        <div class="col-xs-4 text-left " id="location"><a class="btn " data-toggle="modal" data-target="#myModal"><h4>
-            成都∨</h4></a></div>
-        <div class="col-xs-4 text-center " id="page_name"><a class="btn  "><h4>海骄社区∨</h4></a></div>
-        <div class="col-xs-4 text-right " id="useradmin"><a class="btn"><h4>个人中心∨></h4></a></div>
-
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" style="max-width:300px" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">选择城市</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="city">当前城市</label>
-                                <label id='currcity' class="form-control">
-                                    <option>成都</option>
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <label for="city">选择城市</label>
-                                <select id='city' class="form-control">
-                                    <option>成都</option>
-                                    <option>安岳</option>
-                                    <option>大面镇</option>
-                                    <option>龙泉驿</option>
-                                </select>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                        <button type="button" class="btn btn-info">提交</button>
-                    </div>
-                </div>
-            </div>
+        <div class="col-xs-4 text-left " id="location"><a class="btn " data-toggle="modal" data-target="#myModal"><p>
+            成都<span class="caret"></span></p></a></div>
+        <div class="col-xs-4 text-center " id="page_name"><a class="btn  "><p>海骄社区<span class="caret"></span></p></a>
         </div>
+        <div class="col-xs-4 text-right " id="useradmin"><a class="btn"><p>个人中心<span class="caret"></span></p></a></div>
 
         <!--位置找房-->
     </div>
     <div class="row phone_header ">
         <div class="col-xs-12 text-center">
-        <div class="input-group ">
-             <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
-            <input type="text" class="form-control" placeholder="请输入小区 商圈 街区">
-      <span class="input-group-btn">
+            <div class="input-group ">
+                <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"
+                                                                         aria-hidden="true"></span></span>
+                <input type="text" class="form-control" placeholder="请输入小区 商圈 街区">
+                <span class="input-group-btn">
         <button class="btn btn-default" type="button">地图找房</button>
       </span>
-        </div><!-- /input-group -->
-            </div>
+            </div><!-- /input-group -->
+        </div>
     </div>
 
+
+<script src="{% static 'range/js/jquery.range.js' %} "></script>
+<script type="text/javascript">
+$(function () {
+	$('.single-slider').jRange({
+		from: 0,
+		to: 100,
+		step: 1,
+		scale: [0, 25, 50, 75, 100],
+		format: '%s',
+		width:$(".demo").width(),
+		showLabels: true,
+		showScale: true
+	});
+
+	$('.range-slider').jRange({
+		from: 0,
+		to: 100,
+		step: 1,
+		scale: [0, 25, 50, 75, 100],
+		format: '%s',
+		width: $(".demo").width(),
+		showLabels: true,
+		isRange: true
+	});
+
+	$("#g1").click(function () {
+		var aa = $(".single-slider").val();
+		alert(aa);
+	});
+
+	$("#g2").click(function () {
+		var aa = $(".range-slider").val();
+		alert(aa);
+	});
+});
+</script>
+    <!--价格筛选-->
+    <div class="row phone_header">
+        <div class="col-xs-12 text-center">
+            <div class="demo">
+                <input class="range-slider" type="hidden" value="10,89" style="display: none;">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" style="max-width:300px" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">选择城市</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="city">当前城市</label>
+                            <label id='currcity' class="form-control">
+                                <option>成都</option>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">选择城市</label>
+                            <select id='city' class="form-control">
+                                <option>成都</option>
+                                <option>安岳</option>
+                                <option>大面镇</option>
+                                <option>龙泉驿</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-info">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
 
@@ -97,11 +147,12 @@
 <!--公司简介-->
 <div class="jieshu">
     <div>
-        <div class="alert bottom">
+        <div class="alert phone_bottom">
             <div class="text-center">Copyright © 2017-2017 海骄社区有限公司. All Rights Reserved 蜀ICP备XXXXXXX号</div>
         </div>
     </div>
 </div>
+
 
 </body>
 </html>

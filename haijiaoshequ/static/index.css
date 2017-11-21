@@ -126,20 +126,35 @@ text-overflow:ellipsis;         /* 当对象内文本溢出时显示省略标记
 
 
 
+
+
+ .phone_body
+ {
+ background-image:linear-gradient(0deg,#00a699,#24cbc1);
+
+ }
+
+
  .phone_header
  {
- background-color:#62c5bc;
- height:100px;
- padding-top:20px;
- padding-bottom:20px;
+ height:80px;
+ padding-top:10px;
+ padding-bottom:10px;
  }
+
  .phone_header>div
  {
- padding-bottom:20px;
+ padding-bottom:10px;
  }
-.phone_header>div > a
-{
-    color:white;
-    vertical-align:middle;
-    font-weight:500;
+
+.phone_header>div > a {
+    color: white;
+    vertical-align: middle;
+
+}
+
+
+.phone_bottom {
+    background-color: #03ada0;
+    overflow: hidden;
 }
