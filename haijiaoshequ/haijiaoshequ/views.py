@@ -24,3 +24,10 @@ def apply(request,name='haijiaoshequ'):
     template =  loader.get_template('apply.html');
     context = {'name':name}
     return HttpResponse(template.render(context, request))
+
+
+
+def phone_index(request,name='haijiaoshequ'):
+    template =  loader.get_template('phone_index.html');
+    context = {'name':name}
+    return HttpResponse(template.render(context, request))

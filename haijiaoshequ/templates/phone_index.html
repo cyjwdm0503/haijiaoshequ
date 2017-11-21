@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>{{ name }} </title>
+    {% load static %}
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!--
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <!--
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    -->
+    <!---<link rel="stylesheet" href="../static/bootstrap/css/bootstrap-theme.min.css" >
+
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <!--
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    -->
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %} "></script>
+    <link rel="stylesheet" href="{% static '/index.css' %}">
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row phone_header">
+
+        <div class="col-xs-4 text-left " id="location"><a class="btn " data-toggle="modal" data-target="#myModal"><h4>
+            成都∨</h4></a></div>
+        <div class="col-xs-4 text-center " id="page_name"><a class="btn  "><h4>海骄社区∨</h4></a></div>
+        <div class="col-xs-4 text-right " id="useradmin"><a class="btn"><h4>个人中心∨></h4></a></div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" style="max-width:300px" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">选择城市</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="city">当前城市</label>
+                                <label id='currcity' class="form-control">
+                                    <option>成都</option>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label for="city">选择城市</label>
+                                <select id='city' class="form-control">
+                                    <option>成都</option>
+                                    <option>安岳</option>
+                                    <option>大面镇</option>
+                                    <option>龙泉驿</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-info">提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--位置找房-->
+    </div>
+    <div class="row phone_header ">
+        <div class="col-xs-12 text-center">
+        <div class="input-group ">
+             <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+            <input type="text" class="form-control" placeholder="请输入小区 商圈 街区">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">地图找房</button>
+      </span>
+        </div><!-- /input-group -->
+            </div>
+    </div>
+
+
+</div>
+
+<!--加盟优势-->
+
+
+<!--公司简介-->
+<div class="jieshu">
+    <div>
+        <div class="alert bottom">
+            <div class="text-center">Copyright © 2017-2017 海骄社区有限公司. All Rights Reserved 蜀ICP备XXXXXXX号</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

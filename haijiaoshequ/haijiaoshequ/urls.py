@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^zhanshi/',include('zhanshi.urls')),
     url(r'^search',views.search,{'name':'我要租房'}),
     url(r'^apply',views.apply,{'name':'房东加盟'}),
+    url(r'^phone',views.phone_index,{'name':'手机版海骄社区'}),
     url(r'^',views.index,{'name':'海骄社区'})
 ]

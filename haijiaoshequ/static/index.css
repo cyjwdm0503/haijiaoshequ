@@ -111,7 +111,7 @@ text-overflow:ellipsis;         /* 当对象内文本溢出时显示省略标记
 .option_div1
 {
     float: left;
-        margin-left: 5px;
+    margin-left: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -119,8 +119,27 @@ text-overflow:ellipsis;         /* 当对象内文本溢出时显示省略标记
 {
    float: inherit;
     display: table;
-        margin-left: 5px;
+    margin-left: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
+
+
+ .phone_header
+ {
+ background-color:#62c5bc;
+ height:100px;
+ padding-top:20px;
+ padding-bottom:20px;
+ }
+ .phone_header>div
+ {
+ padding-bottom:20px;
+ }
+.phone_header>div > a
+{
+    color:white;
+    vertical-align:middle;
+    font-weight:500;
+}
