@@ -1,0 +1,14 @@
+.swipe {
+     padding:0;
+  vertical-align:baseline;
+  margin-bottom:20px;
+  overflow:hidden;
+  position:relative;
+  width:100%;
+}
+.swipe ul{
+     padding:0;
+  vertical-align:baseline;
+    overflow:hidden;
+}
+

@@ -1,86 +1,76 @@
 
-
 .center-block {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-h2
-{
- padding-bottom: 20px;
+h2 {
+    padding-bottom: 20px;
 }
 
-img
-{  display: block;
-  margin-left: auto;
-  margin-right: auto;
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
-
 
 .element {
-  .center-block();
+. center-block();
 }
 
-
-
-.index_img
-{
-    height: 250px;
-}
-.apply_img
-{
+.index_img {
     height: 250px;
 }
 
-.house_info
-{
+.apply_img {
+    height: 250px;
+}
+
+.house_info {
     width: 100%;
     height: 480px;
 }
-.img_border
-{
+
+.img_border {
     height: 220px;
 }
-.img_border>img
-{
+
+.img_border > img {
     max-height: 220px;
 }
 
-
-.four_support_div
-{
+.four_support_div {
     max-width: 800px;
 }
 
-.four_support_border
-{
+.four_support_border {
     height: 150px;
 }
 
-.four_support_info
-{
+.four_support_info {
     height: 160px;
 }
 
-.four_support_border >img
-{
+.four_support_border > img {
     height: auto;
     width: auto;
     max-width: 100%;
-    max-height:150px;
+    max-height: 150px;
 }
 
-.bg{background:url('') no-repeat center fixed;background-size:contain}
-
+.bg {
+    background: url('') no-repeat center fixed;
+    background-size: contain
+}
 
 .center-vertical {
-    position:relative;
-    top:50%;
-    transform:translateY(-50%);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-.gongsi_info{
+.gongsi_info {
     padding-top: 60px;
     padding-bottom: 60px;
 }
@@ -90,17 +80,14 @@ img
     overflow: hidden;
 }
 
-.fangwu_info_too_long
-{
-    word-break:keep-all;           /* 不换行 */
-white-space:nowrap;          /* 不换行 */
-overflow:hidden;               /* 内容超出宽度时隐藏超出部分的内容 */
-text-overflow:ellipsis;         /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+.fangwu_info_too_long {
+    word-break: keep-all; /* 不换行 */
+    white-space: nowrap; /* 不换行 */
+    overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
 }
 
-
-.search_link
-{
+.search_link {
     display: inline-block;
     width: 85px;
     margin-left: 5px;
@@ -108,53 +95,100 @@ text-overflow:ellipsis;         /* 当对象内文本溢出时显示省略标记
     margin-bottom: 5px;
 }
 
-.option_div1
-{
+.option_div1 {
     float: left;
     margin-left: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
 }
-.option_div2
-{
-   float: inherit;
+
+.option_div2 {
+    float: inherit;
     display: table;
     margin-left: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
+.phone_body {
+    background-image: linear-gradient(0deg, #00a699, #24cbc1);
 
+}
 
+.phone_header {
+    height: 80px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
+.phone_header > div {
+    padding-bottom: 10px;
+}
 
- .phone_body
- {
- background-image:linear-gradient(0deg,#00a699,#24cbc1);
-
- }
-
-
- .phone_header
- {
- height:80px;
- padding-top:10px;
- padding-bottom:10px;
- }
-
- .phone_header>div
- {
- padding-bottom:10px;
- }
-
-.phone_header>div > a {
+.phone_header > div > a {
     color: white;
     vertical-align: middle;
 
 }
 
-
 .phone_bottom {
     background-color: #03ada0;
     overflow: hidden;
+}
+
+.phone_img_border {
+    max-width: 240px;
+    max-height: 240px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 3px 3px 10px 0 hsla(0, 20%, 4%, 0.36);
+}
+
+.phone_img_info_hidden {
+    max-width: 240px;
+    word-break: keep-all; /* 不换行 */
+    white-space: nowrap; /* 不换行 */
+    overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+}
+
+.phone_img_huodong_border {
+    max-width: 360px;
+    max-height: 270px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 3px 3px 10px 0 hsla(0, 20%, 4%, 0.36);
+}
+
+.phone_img_huodong_hidden {
+    max-width: 360px;
+    word-break: keep-all; /* 不换行 */
+    white-space: nowrap; /* 不换行 */
+    overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+}
+
+.phone_img_fuwu_border {
+    max-width: 360px;
+    max-height: 270px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 3px 3px 10px 0 hsla(0, 20%, 4%, 0.36);
+}
+
+.phone_img_fuwu_hidden {
+    max-width: 360px;
+    word-break: keep-all; /* 不换行 */
+    white-space: nowrap; /* 不换行 */
+    overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+}
+
+li > div > .thumbnail
+{
+    border: none;
+    padding-right: 10px;
 }

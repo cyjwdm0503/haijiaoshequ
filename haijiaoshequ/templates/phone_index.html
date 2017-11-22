@@ -28,15 +28,21 @@
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %} "></script>
     <link rel="stylesheet" href="{% static '/index.css' %}">
     <link rel="stylesheet" href="{% static '/range/css/jquery.range.css' %}">
-
+    <link rel="stylesheet" href="{% static '/touchslider/css/style.css' %}">
+    <script src="{% static '/touchslider/js/touchslider.js' %}"></script>
 </head>
+<!--设定图片的大小，使手机屏幕能看见2个半-->
+<script type="text/javascript">
+
+
+</script>
 <body>
 
 <div class="container-fluid phone_body">
     <div class="row phone_header">
 
-        <div class="col-xs-4 text-left " id="location"><a class="btn " data-toggle="modal" data-target="#myModal"><p>
-            成都<span class="caret"></span></p></a></div>
+        <div class="col-xs-4 text-left "><a class="btn " data-toggle="modal" data-target="#myModal"><p id="location">
+            <span class="glyphicon glyphicon-map-marker"></span>成都</p></a></div>
         <div class="col-xs-4 text-center " id="page_name"><a class="btn  "><p>海骄社区<span class="caret"></span></p></a>
         </div>
         <div class="col-xs-4 text-right " id="useradmin"><a class="btn"><p>个人中心<span class="caret"></span></p></a></div>
@@ -46,60 +52,29 @@
     <div class="row phone_header ">
         <div class="col-xs-12 text-center">
             <div class="input-group ">
-                <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"
-                                                                         aria-hidden="true"></span></span>
-                <input type="text" class="form-control" placeholder="请输入小区 商圈 街区">
+                <span class="input-group-addon" style="background-color: #ffffff;border: none;border-right-color: gray"
+                      id="sizing-addon1"><span class="glyphicon glyphicon-search"
+                                               aria-hidden="true"></span></span>
+                <input type="text" class="form-control" style="border:1px  darkgrey;border-left-style: solid;"
+                       placeholder="请输入小区 商圈 街区">
                 <span class="input-group-btn">
-        <button class="btn btn-default" type="button">地图找房</button>
+        <button class="btn btn-default" type="button"
+                style="border:1px solid transparent;border-left-style: solid;border-left-color: darkgrey;">地图找房</button>
       </span>
             </div><!-- /input-group -->
         </div>
     </div>
 
 
-<script src="{% static 'range/js/jquery.range.js' %} "></script>
-<script type="text/javascript">
-$(function () {
-	$('.single-slider').jRange({
-		from: 0,
-		to: 100,
-		step: 1,
-		scale: [0, 25, 50, 75, 100],
-		format: '%s',
-		width:$(".range").width(),
-		showLabels: true,
-		showScale: true
-	});
-
-	$('.range-slider').jRange({
-		from: 0,
-		to: 100,
-		step: 1,
-		scale: [0, 25, 50, 75, 100],
-		format: '%s',
-		width: $(".range").width(),
-		showLabels: true,
-		isRange: true
-	});
-
-	$("#g1").click(function () {
-		var aa = $(".single-slider").val();
-		alert(aa);
-	});
-
-	$("#g2").click(function () {
-		var aa = $(".range-slider").val();
-		alert(aa);
-	});
-
-	 $(".range>div").css("width","100%");
-});
-</script>
+    <!--我的预算(元/月)-->
+    <div>
+        <p style="color: white">我的预算(元/月)</p>
+    </div>
     <!--价格筛选-->
     <div class="row phone_header">
         <div class="col-xs-12 text-center">
             <div class="range">
-                <input class="range-slider" type="hidden" value="10,89" style="display: none;">
+                <input class="range-slider" type="hidden" id="price" value="300,1250" style="display: none;">
             </div>
         </div>
     </div>
@@ -131,7 +106,7 @@ $(function () {
                                 <option>龙泉驿</option>
                             </select>
                         </div>
-                    </
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -143,8 +118,377 @@ $(function () {
 
 </div>
 
-<!--加盟优势-->
 
+<div class="page-header">
+    <!--查找结果-->
+    <div class="container-fluid">
+        <div><h4 class="text-left">合租</h4></div>
+    </div>
+    <div class="swipe">
+        <ul id="slider1">
+            <li style="display:inline;float: left; display: inline;">
+                <div>
+                    <div class="thumbnail">
+                        <div class="phone_img_border"><img class="img-responsive "
+                                                           src="{% static 'phone/全部合租/全部合租.jpg' %}" alt="房间1">
+                        </div>
+                        <div class="caption">
+                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li style="display:inline;float: left;  ">
+                <div>
+                    <div class="thumbnail">
+                        <div class="phone_img_border"><img class="img-responsive "
+                                                           src="{% static 'phone/全部合租/房间1.jpg' %}" alt="房间1">
+                        </div>
+                        <div class="caption">
+                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li style=" float: left; display: inline;">
+                <div>
+                    <div class="thumbnail">
+                        <div class="phone_img_border"><img class="img-responsive "
+                                                           src="{% static 'phone/全部合租/房间2.jpg' %}" alt="房间1">
+                        </div>
+                        <div class="caption">
+                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li style=" float: left; display: inline;">
+                <div>
+                    <div class="thumbnail">
+                        <div class="phone_img_border"><img class="img-responsive "
+                                                           src="{% static 'phone/全部合租/房间3.jpg' %}" alt="房间1">
+                        </div>
+                        <div class="caption">
+                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li style=" float: left; display: inline;">
+                <div>
+                    <div class="thumbnail">
+                        <div class="phone_img_border"><img class="img-responsive "
+                                                           src="{% static 'phone/全部合租/房间4.jpg' %}" alt="房间1">
+                        </div>
+                        <div class="caption">
+                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li style=" float: left; display: inline;">
+                <div>
+                    <div class="thumbnail">
+                        <div class="phone_img_border"><img class="img-responsive "
+                                                           src="{% static 'phone/全部整租/房间1.jpg' %}" alt="房间1">
+                        </div>
+                        <div class="caption">
+                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li style=" float: left; display: inline;">
+                <div>
+                    <div class="thumbnail">
+                        <div class="phone_img_border"><img class="img-responsive "
+                                                           src="{% static 'phone/全部合租/房间5.jpg' %}" alt="房间1">
+                        </div>
+                        <div class="caption">
+                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+
+        </ul>
+    </div>
+    <div class="container-fluid">
+        <div><h4 class="text-left">整租</h4></div>
+    </div>
+    <div class="swipe">
+        <ul id="slider2">
+            <li style="display:inline;float: left;  ">
+                <div>
+                    <div class="thumbnail">
+                        <div class="phone_img_border"><img class="img-responsive "
+                                                           src="{% static 'phone/全部整租/全部整租.jpg' %}" alt="房间1">
+                        </div>
+                        <div class="caption">
+                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li style=" float: left; display: inline;">
+                <div>
+                    <div class="thumbnail">
+                        <div class="phone_img_border"><img class="img-responsive "
+                                                           src="{% static 'phone/全部整租/房间1.jpg' %}" alt="房间1">
+                        </div>
+                        <div class="caption">
+                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li style=" float: left; display: inline;">
+                <div>
+                    <div class="thumbnail">
+                        <div class="phone_img_border"><img class="img-responsive "
+                                                           src="{% static 'phone/全部整租/房间2.jpg' %}" alt="房间1">
+                        </div>
+                        <div class="caption">
+                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li style=" float: left; display: inline;">
+                <div>
+                    <div class="thumbnail">
+                        <div class="phone_img_border"><img class="img-responsive "
+                                                           src="{% static 'phone/全部整租/房间3.jpg' %}" alt="房间1">
+                        </div>
+                        <div class="caption">
+                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li style=" float: left; display: inline;">
+                <div>
+                    <div class="thumbnail">
+                        <div class="phone_img_border"><img class="img-responsive "
+                                                           src="{% static 'phone/全部整租/房间4.jpg' %}" alt="房间1">
+                        </div>
+                        <div class="caption">
+                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li style=" float: left; display: inline;">
+                <div>
+                    <div class="thumbnail">
+                        <div class="phone_img_border"><img class="img-responsive "
+                                                           src="{% static 'phone/全部整租/房间1.jpg' %}" alt="房间1">
+                        </div>
+                        <div class="caption">
+                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li style=" float: left; display: inline;">
+                <div>
+                    <div class="thumbnail">
+                        <div class="phone_img_border"><img class="img-responsive "
+                                                           src="{% static 'phone/全部整租/房间5.jpg' %}" alt="房间1">
+                        </div>
+                        <div class="caption">
+                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+
+        </ul>
+    </div>
+
+
+    <!--查找结果-->
+
+
+</div>
+
+<div class="page-header">
+    <div class="container-fluid">
+        <div><h4 class="text-left">活动</h4></div>
+    </div>
+    <div class="swipe">
+        <ul id="slider3">
+            <li style="display:inline;float: left; display: inline;">
+                <div>
+                    <div class="thumbnail">
+                        <div class="phone_img_huodong_border"><img class="img-responsive "
+                                                           src="{% static 'phone/活动/活动1.png' %}" alt="房间1">
+                        </div>
+                        <div class="caption">
+                            <p class="phone_img_huodong_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li style="display:inline;float: left;  ">
+                <div>
+                    <div class="thumbnail">
+                        <div class="phone_img_huodong_border"><img class="img-responsive "
+                                                           src="{% static 'phone/活动/活动2.jpg' %}" alt="房间1">
+                        </div>
+                        <div class="caption">
+                            <p class="phone_img_huodong_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li style="display:inline;float: left;  ">
+                <div>
+                    <div class="thumbnail">
+                        <div class="phone_img_huodong_border"><img class="img-responsive "
+                                                           src="{% static 'phone/活动/活动3.jpg' %}" alt="房间1">
+                        </div>
+                        <div class="caption">
+                            <p class="phone_img_huodong_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li style="display:inline;float: left;  ">
+                <div>
+                    <div class="thumbnail">
+                        <div class="phone_img_huodong_border"><img class="img-responsive "
+                                                           src="{% static 'phone/活动/活动4.png' %}" alt="房间1">
+                        </div>
+                        <div class="caption">
+                            <p class="phone_img_huodong_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li style="display:inline;float: left;  ">
+                <div>
+                    <div class="thumbnail">
+                        <div class="phone_img_huodong_border"><img class="img-responsive "
+                                                           src="{% static 'phone/活动/活动5.png' %}" alt="房间1">
+                        </div>
+                        <div class="caption">
+                            <p class="phone_img_huodong_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div id="jiamengyoushi">
+        <div class="page-header">
+                <div class="container-fluid">
+        <div><h4 class="text-left">选择海骄社区的理由</h4></div>
+    </div>
+
+
+            <div class="row">
+                <div class="col-xs-4 ">
+                    <div class="align-right">
+                        <img class="img-responsive center-block" src="{% static '加盟优势1.png' %}">
+                        <h4 class="text-info  text-center">安全放心 </h4>
+
+                        <p class="text-info  text-center">租金保底（包租） </p>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div><img class="img-responsive center-block" src="{% static '加盟优势2.png' %}"><h4
+                            class="text-info  text-center"> 稳定收益 </h4></div>
+                    <p class="text-info  text-center">30万房屋财险 </p>
+                </div>
+                <div class="col-xs-4">
+                    <div>
+                        <img class="img-responsive center-block" src="{% static '加盟优势3.png' %}"><h4
+                            class="text-info text-center"> 省时省心 </h4>
+
+                        <p class="text-info  text-center">专业而完备的租后服务（包管） </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+<div class="page-header">
+    <div class="container-fluid">
+        <div><h4 class="text-left">为你贴心提供</h4></div>
+    </div>
+    <div class="swipe">
+        <ul id="slider4">
+            <li style="display:inline;float: left; display: inline;">
+                <div>
+                    <div class="thumbnail">
+                        <div class="phone_img_fuwu_border"><img class="img-responsive "
+                                                           src="{% static 'phone/服务/保洁.jpg' %}" alt="房间1">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li style="display:inline;float: left;  ">
+                <div>
+                    <div class="thumbnail">
+                        <div class="phone_img_fuwu_border"><img class="img-responsive "
+                                                           src="{% static 'phone/服务/维修.jpg' %}" alt="房间1">
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+            <li style="display:inline;float: left;  ">
+                <div>
+                    <div class="thumbnail">
+                        <div class="phone_img_fuwu_border"><img class="img-responsive "
+                                                           src="{% static 'phone/服务/客服.jpg' %}" alt="房间1">
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+            <li style="display:inline;float: left;  ">
+                <div>
+                    <div class="thumbnail">
+                        <div class="phone_img_fuwu_border"><img class="img-responsive "
+                                                           src="{% static 'phone/服务/管家.jpg' %}" alt="房间1">
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
 
 <!--公司简介-->
 <div class="jieshu">
@@ -155,6 +499,103 @@ $(function () {
     </div>
 </div>
 
+
+<script src="{% static 'range/js/jquery.range.js' %} "></script>
+<script type="text/javascript">
+    $(function () {
+
+
+        $('.range-slider').jRange({
+            from: 0,
+            to: 2500,
+            step: 50,
+            scale: [0, 500, 1000, 1500, 2000, 2500],
+            format: '%s',
+            width: $(".range").width(),
+            showLabels: true,
+            showScale: true,
+            isRange: true
+        });
+
+
+        $("#g2").click(function () {
+            var aa = $(".range-slider").val();
+            alert(aa);
+        });
+
+        $(".range>div").css("width", "99%");
+    });
+</script>
+<script type="text/javascript">
+
+
+    var changesize = function () {
+        var width = $("body").width() / 2.5;
+        if (width < 200) {
+
+            $("li > div > .thumbnail ").css("width", 160);
+             $("#slider3>li > div > .thumbnail ").css("width", 200);
+             $("#slider4>li > div > .thumbnail ").css("width", 160);
+        }
+        else {
+            $("li > div > .thumbnail ").css("width", 240);
+             $("#slider3>li > div > .thumbnail ").css("width", 360);
+             $("#slider3>li > div > .thumbnail ").css("width", 250);
+        }
+        t1 = null;
+        t1 = new TouchSlider('slider1', {
+            duration: 800,
+            interval: 3000,
+            direction: 0,
+            autoplay: true,
+            align: 'left',
+            mousewheel: false,
+            mouse: true,
+            fullsize: false
+        });
+        t2 = null;
+        t2 = new TouchSlider('slider2', {
+            duration: 800,
+            interval: 3000,
+            direction: 0,
+            autoplay: true,
+            align: 'left',
+            mousewheel: false,
+            mouse: true,
+            fullsize: false
+        });
+
+                t3 = null;
+        t3 = new TouchSlider('slider3', {
+            duration: 800,
+            interval: 3000,
+            direction: 0,
+            autoplay: false,
+            align: 'left',
+            mousewheel: false,
+            mouse: true,
+            fullsize: false
+        });
+                t4 = null;
+        t4 = new TouchSlider('slider4', {
+            duration: 800,
+            interval: 3000,
+            direction: 0,
+            autoplay: false,
+            align: 'left',
+            mousewheel: false,
+            mouse: true,
+            fullsize: false
+        });
+    };
+
+    changesize();
+
+    window.onresize = function () {
+        changesize();
+    }
+
+</script>
 
 </body>
 </html>
