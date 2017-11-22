@@ -66,7 +66,7 @@ $(function () {
 		step: 1,
 		scale: [0, 25, 50, 75, 100],
 		format: '%s',
-		width:$(".demo").width(),
+		width:$(".range").width(),
 		showLabels: true,
 		showScale: true
 	});
@@ -77,7 +77,7 @@ $(function () {
 		step: 1,
 		scale: [0, 25, 50, 75, 100],
 		format: '%s',
-		width: $(".demo").width(),
+		width: $(".range").width(),
 		showLabels: true,
 		isRange: true
 	});
@@ -91,12 +91,14 @@ $(function () {
 		var aa = $(".range-slider").val();
 		alert(aa);
 	});
+
+	 $(".range>div").css("width","100%");
 });
 </script>
     <!--价格筛选-->
     <div class="row phone_header">
         <div class="col-xs-12 text-center">
-            <div class="demo">
+            <div class="range">
                 <input class="range-slider" type="hidden" value="10,89" style="display: none;">
             </div>
         </div>
@@ -129,7 +131,7 @@ $(function () {
                                 <option>龙泉驿</option>
                             </select>
                         </div>
-                    </form>
+                    </
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>

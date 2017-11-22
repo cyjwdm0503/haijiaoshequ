@@ -26,7 +26,6 @@
   position: absolute;
   top: -17px;
   font-size: 8px;
-  background: white;
   white-space: nowrap;
   line-height: 1;
 }
@@ -56,7 +55,6 @@
   position: absolute;
   left: 0;
   top: 5px;
-  color: #999;
   line-height: 1;
 }
 .slider-container.slider-readonly .clickable-dummy,
@@ -66,13 +64,13 @@
 .theme-green .back-bar {
   height: 15px;
   border-radius: 2px;
-  background-color: #eeeeee;
-  background-color: #e7e7e7;
-  background-image: -moz-linear-gradient(top, #eeeeee, #dddddd);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#eeeeee), to(#dddddd));
-  background-image: -webkit-linear-gradient(top, #eeeeee, #dddddd);
-  background-image: -o-linear-gradient(top, #eeeeee, #dddddd);
-  background-image: linear-gradient(to bottom, #eeeeee, #dddddd);
+  background-color: #0cb2a6;
+  background-color: #0cb2a6;
+  background-image: -moz-linear-gradient(top, #0c9084, #0cb2a6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0cb2a6), to(#0cb2a6));
+  background-image: -webkit-linear-gradient(top, #0cb2a6, #0cb2a6);
+  background-image: -o-linear-gradient(top, #0cb2a6, #0cb2a6);
+  background-image: linear-gradient(to bottom, #0cb2a6, #0cb2a6);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffeeeeee', endColorstr='#ffdddddd', GradientType=0);
 }
@@ -88,9 +86,10 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FABDE3', endColorstr='#E67BD6', GradientType=0);
 }
 .theme-green .back-bar .pointer {
-  width: 14px;
+  width: 25px;
   height: 25px;
-  top: -5px;
+  border-radius:13px;
+  top: -6px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -101,12 +100,12 @@
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#eeeeee), to(#dddddd));
   background-image: -webkit-linear-gradient(top, #eeeeee, #dddddd);
   background-image: -o-linear-gradient(top, #eeeeee, #dddddd);
-  background-image: linear-gradient(to bottom, #eeeeee, #dddddd);
+  background-image: linear-gradient(to bottom, #337ab7, #337ab7);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffeeeeee', endColorstr='#fdddddd', GradientType=0);
 }
 .theme-green .back-bar .pointer-label {
-  color: #999;
+
 }
 .theme-green .back-bar .focused {
   color: #333;
@@ -115,7 +114,7 @@
   border-left: 1px solid #e5e5e5;
 }
 .theme-green .scale ins {
-  color: #999;
+
 }
 .theme-blue .back-bar {
   height: 5px;
