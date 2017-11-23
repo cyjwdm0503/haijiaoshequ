@@ -41,8 +41,8 @@
 <div class="container-fluid phone_body">
     <div class="row phone_header">
 
-        <div class="col-xs-4 text-left "><a class="btn " data-toggle="modal" data-target="#myModal"><p id="location">
-            <span class="glyphicon glyphicon-map-marker"></span>成都</p></a></div>
+        <div class="col-xs-4 text-left "><a class="btn " data-toggle="modal" data-target="#myModal"><p>
+            <span class="glyphicon glyphicon-map-marker"></span><span id="location">成都 </span></p></a></div>
         <div class="col-xs-4 text-center " id="page_name"><a class="btn  "><p>海骄社区<span class="caret"></span></p></a>
         </div>
         <div class="col-xs-4 text-right " id="useradmin"><a class="btn"><p>个人中心<span class="caret"></span></p></a></div>
@@ -80,6 +80,7 @@
     </div>
 
 
+    <!---地理位置切换-->
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" style="max-width:300px" role="document">
@@ -100,21 +101,40 @@
                         <div class="form-group">
                             <label for="city">选择城市</label>
                             <select id='city' class="form-control">
-                                <option>成都</option>
-                                <option>安岳</option>
-                                <option>大面镇</option>
-                                <option>龙泉驿</option>
+                                <option value="成都">成都</option>
+                                <option value="安岳">安岳</option>
+                                <option value="大面镇">大面镇</option>
+                                <option value="龙泉驿">龙泉驿</option>
                             </select>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-info">提交</button>
+                    <button type="button" class="btn btn-default" id="cancel" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-info" id="select_location" onclick="get_select_location()" data-dismiss="modal">提交
+                    </button>
                 </div>
             </div>
         </div>
     </div>
+
+    <script type="application/javascript">
+        var set_location = function (city) {
+            if (city != null) {
+                $("#location").text(city);
+            }
+
+            else {
+                $("#location").text("安岳");
+            }
+        }
+
+        var get_select_location = function () {
+            var city = $("#city").val();
+            set_location(city);
+        }
+    </script>
+    <!---地理位置切换-->
 
 </div>
 
@@ -338,7 +358,7 @@
                 <div>
                     <div class="thumbnail">
                         <div class="phone_img_huodong_border"><img class="img-responsive "
-                                                           src="{% static 'phone/活动/活动1.png' %}" alt="房间1">
+                                                                   src="{% static 'phone/活动/活动1.png' %}" alt="房间1">
                         </div>
                         <div class="caption">
                             <p class="phone_img_huodong_hidden">来自于十里彩云间，理工学子大家都懂的</p>
@@ -351,7 +371,7 @@
                 <div>
                     <div class="thumbnail">
                         <div class="phone_img_huodong_border"><img class="img-responsive "
-                                                           src="{% static 'phone/活动/活动2.jpg' %}" alt="房间1">
+                                                                   src="{% static 'phone/活动/活动2.jpg' %}" alt="房间1">
                         </div>
                         <div class="caption">
                             <p class="phone_img_huodong_hidden">来自于十里彩云间，理工学子大家都懂的</p>
@@ -364,7 +384,7 @@
                 <div>
                     <div class="thumbnail">
                         <div class="phone_img_huodong_border"><img class="img-responsive "
-                                                           src="{% static 'phone/活动/活动3.jpg' %}" alt="房间1">
+                                                                   src="{% static 'phone/活动/活动3.jpg' %}" alt="房间1">
                         </div>
                         <div class="caption">
                             <p class="phone_img_huodong_hidden">来自于十里彩云间，理工学子大家都懂的</p>
@@ -377,7 +397,7 @@
                 <div>
                     <div class="thumbnail">
                         <div class="phone_img_huodong_border"><img class="img-responsive "
-                                                           src="{% static 'phone/活动/活动4.png' %}" alt="房间1">
+                                                                   src="{% static 'phone/活动/活动4.png' %}" alt="房间1">
                         </div>
                         <div class="caption">
                             <p class="phone_img_huodong_hidden">来自于十里彩云间，理工学子大家都懂的</p>
@@ -390,7 +410,7 @@
                 <div>
                     <div class="thumbnail">
                         <div class="phone_img_huodong_border"><img class="img-responsive "
-                                                           src="{% static 'phone/活动/活动5.png' %}" alt="房间1">
+                                                                   src="{% static 'phone/活动/活动5.png' %}" alt="房间1">
                         </div>
                         <div class="caption">
                             <p class="phone_img_huodong_hidden">来自于十里彩云间，理工学子大家都懂的</p>
@@ -405,39 +425,38 @@
 
 
 <div id="jiamengyoushi">
-        <div class="page-header">
-                <div class="container-fluid">
-        <div><h4 class="text-left">选择海骄社区的理由</h4></div>
-    </div>
+    <div class="page-header">
+        <div class="container-fluid">
+            <div><h4 class="text-left">选择海骄社区的理由</h4></div>
+        </div>
 
 
-            <div class="row">
-                <div class="col-xs-4 ">
-                    <div class="align-right">
-                        <img class="img-responsive center-block" src="{% static '加盟优势1.png' %}">
-                        <h4 class="text-info  text-center">安全放心 </h4>
+        <div class="row">
+            <div class="col-xs-4 ">
+                <div class="align-right">
+                    <img class="img-responsive center-block" src="{% static '加盟优势1.png' %}">
+                    <h4 class="text-info  text-center">安全放心 </h4>
 
-                        <p class="text-info  text-center">租金保底（包租） </p>
-                    </div>
+                    <p class="text-info  text-center">租金保底（包租） </p>
                 </div>
-                <div class="col-xs-4">
-                    <div><img class="img-responsive center-block" src="{% static '加盟优势2.png' %}"><h4
-                            class="text-info  text-center"> 稳定收益 </h4></div>
-                    <p class="text-info  text-center">30万房屋财险 </p>
-                </div>
-                <div class="col-xs-4">
-                    <div>
-                        <img class="img-responsive center-block" src="{% static '加盟优势3.png' %}"><h4
-                            class="text-info text-center"> 省时省心 </h4>
-
-                        <p class="text-info  text-center">专业而完备的租后服务（包管） </p>
-                    </div>
-                </div>
-
             </div>
+            <div class="col-xs-4">
+                <div><img class="img-responsive center-block" src="{% static '加盟优势2.png' %}"><h4
+                        class="text-info  text-center"> 稳定收益 </h4></div>
+                <p class="text-info  text-center">30万房屋财险 </p>
+            </div>
+            <div class="col-xs-4">
+                <div>
+                    <img class="img-responsive center-block" src="{% static '加盟优势3.png' %}"><h4
+                        class="text-info text-center"> 省时省心 </h4>
+
+                    <p class="text-info  text-center">专业而完备的租后服务（包管） </p>
+                </div>
+            </div>
+
         </div>
     </div>
-
+</div>
 
 
 <div class="page-header">
@@ -450,7 +469,7 @@
                 <div>
                     <div class="thumbnail">
                         <div class="phone_img_fuwu_border"><img class="img-responsive "
-                                                           src="{% static 'phone/服务/保洁.jpg' %}" alt="房间1">
+                                                                src="{% static 'phone/服务/保洁.jpg' %}" alt="房间1">
                         </div>
                     </div>
                 </div>
@@ -459,17 +478,7 @@
                 <div>
                     <div class="thumbnail">
                         <div class="phone_img_fuwu_border"><img class="img-responsive "
-                                                           src="{% static 'phone/服务/维修.jpg' %}" alt="房间1">
-                        </div>
-
-                    </div>
-                </div>
-            </li>
-            <li style="display:inline;float: left;  ">
-                <div>
-                    <div class="thumbnail">
-                        <div class="phone_img_fuwu_border"><img class="img-responsive "
-                                                           src="{% static 'phone/服务/客服.jpg' %}" alt="房间1">
+                                                                src="{% static 'phone/服务/维修.jpg' %}" alt="房间1">
                         </div>
 
                     </div>
@@ -479,7 +488,17 @@
                 <div>
                     <div class="thumbnail">
                         <div class="phone_img_fuwu_border"><img class="img-responsive "
-                                                           src="{% static 'phone/服务/管家.jpg' %}" alt="房间1">
+                                                                src="{% static 'phone/服务/客服.jpg' %}" alt="房间1">
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+            <li style="display:inline;float: left;  ">
+                <div>
+                    <div class="thumbnail">
+                        <div class="phone_img_fuwu_border"><img class="img-responsive "
+                                                                src="{% static 'phone/服务/管家.jpg' %}" alt="房间1">
                         </div>
 
                     </div>
@@ -534,13 +553,13 @@
         if (width < 200) {
 
             $("li > div > .thumbnail ").css("width", 160);
-             $("#slider3>li > div > .thumbnail ").css("width", 200);
-             $("#slider4>li > div > .thumbnail ").css("width", 180);
+            $("#slider3>li > div > .thumbnail ").css("width", 200);
+            $("#slider4>li > div > .thumbnail ").css("width", 180);
         }
         else {
             $("li > div > .thumbnail ").css("width", 240);
-             $("#slider3>li > div > .thumbnail ").css("width", 360);
-             $("#slider4>li > div > .thumbnail ").css("width", 200);
+            $("#slider3>li > div > .thumbnail ").css("width", 360);
+            $("#slider4>li > div > .thumbnail ").css("width", 200);
         }
         t1 = null;
         t1 = new TouchSlider('slider1', {
@@ -565,7 +584,7 @@
             fullsize: false
         });
 
-                t3 = null;
+        t3 = null;
         t3 = new TouchSlider('slider3', {
             duration: 800,
             interval: 3000,
@@ -576,7 +595,7 @@
             mouse: true,
             fullsize: false
         });
-                t4 = null;
+        t4 = null;
         t4 = new TouchSlider('slider4', {
             duration: 800,
             interval: 3000,
