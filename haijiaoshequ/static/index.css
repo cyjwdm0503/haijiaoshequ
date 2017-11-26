@@ -222,3 +222,38 @@ li > div > .thumbnail {
 {
     width: auto;
 }
+
+.phone_search_li
+{
+    width: 50%;
+    text-align: center;
+}
+
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus
+{
+    border: none;
+    background-color: transparent;
+}
+
+.nav-tabs>li.active>a >span
+{
+
+    background-color: #0fb4a8;
+    padding: inherit;
+    width: 50px;
+
+}
+
+.nav-tabs>li >a >span
+{
+    padding: inherit;
+    width: 50px;
+    color: black;
+}
+
+.nav-tabs>li>a
+{
+    border: 0px solid transparent;
+
+}
