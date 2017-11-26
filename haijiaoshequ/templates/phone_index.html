@@ -167,7 +167,7 @@
                     <div>
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active phone_search_li" onclick="init_part_shangquan()"><a
+                            <li role="presentation" class="phone_search_li" onclick="init_part_shangquan()"><a
                                     href="#xiaqu_part"
                                     aria-controls="home"
                                     role="tab"
@@ -181,9 +181,9 @@
                             </li>
                         </ul>
                         <div class="tab-content">
-                            <div id="xiaqu_part" role="tabpanel" class="tab-pane active">
+                            <div id="xiaqu_part" role="tabpanel" class="tab-pane ">
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="active"><a href="#jingjiangqu_part"
+                                    <li role="presentation" class=""><a href="#jingjiangqu_part"
                                                                               aria-controls="home"
                                                                               role="tab"
                                                                               data-toggle="tab"><span>锦江区</span></a>
@@ -237,7 +237,7 @@
                             </div>
                             <div id="search_map" role="tabpanel" class="tab-pane">
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="active"><a href="#one"
+                                    <li role="presentation" class=""><a href="#one"
                                                                               aria-controls="home"
                                                                               role="tab"
                                                                               data-toggle="tab"><span>1号线</span></a>
@@ -264,9 +264,9 @@
                         <!--商圈热门位置begin-->
                         <div class="tab-content">
                             <div class="tab-content" id="shangquan_part">
-                                <div id="jingjiangqu_part" role="tabpanel" class="tab-pane active">
+                                <div id="jingjiangqu_part" role="tabpanel" class="tab-pane ">
                                     <ul class="nav nav-tabs" role="tablist">
-                                        <li role="presentation" class="active"><a href="#"
+                                        <li role="presentation" class=""><a href="#"
                                                                                   aria-controls="home"
                                                                                   role="tab"
                                                                                   data-toggle="tab"><span
@@ -326,7 +326,7 @@
                                 </div>
                                 <div id="qingyangqu_part" role="tabpanel" class="tab-pane">
                                     <ul class="nav nav-tabs" role="tablist">
-                                        <li role="presentation" class="active"><a href="#"
+                                        <li role="presentation" class=""><a href="#"
                                                                                   aria-controls="home"
                                                                                   role="tab"
                                                                                   data-toggle="tab"><span
@@ -376,7 +376,7 @@
                                 </div>
                                 <div id="one" role="tabpanel" class="tab-pane">
                                     <ul class="nav nav-tabs" role="tablist">
-                                        <li role="presentation" class="active"><a href="#"
+                                        <li role="presentation" class=""><a href="#"
                                                                                   aria-controls="home"
                                                                                   role="tab"
                                                                                   data-toggle="tab"><span
@@ -436,7 +436,7 @@
                                 </div>
                                 <div id="two" role="tabpanel" class="tab-pane">
                                     <ul class="nav nav-tabs" role="tablist">
-                                        <li role="presentation" class="active"><a href="#"
+                                        <li role="presentation" class=""><a href="#"
                                                                                   aria-controls="home"
                                                                                   role="tab"
                                                                                   data-toggle="tab"><span
@@ -512,8 +512,10 @@
 
     <script>
         var init_part_shangquan = function () {
-            $(".tab-pane").removeClass("active");
-            $(".tab-pane >ul>li").removeClass("active");
+            $("#xiaqu_part > ul>li").removeClass("active");
+             $("#search_map > ul>li").removeClass("active");
+            $(" #shangquan_part >div").removeClass("active");
+            $(" #shangquan_part >div>ul>li").removeClass("active");
 
         }
     </script>
