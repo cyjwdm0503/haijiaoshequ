@@ -8,7 +8,8 @@
     {% load static %}
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 
-    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+
     <!--
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     -->
@@ -162,7 +163,7 @@
                     </div>
                 </div>
                 <!--小区地铁筛选--->
-                <div class="modal-footer">
+                <div class="">
                     <div>
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
@@ -170,15 +171,16 @@
                                     href="#xiaqu_part"
                                     aria-controls="home"
                                     role="tab"
-                                    data-toggle="tab"><span>区域</span></a>
+                                    data-toggle="tab" style="display: inline-block"><span>区域</span></a>
                             </li>
                             <li role="presentation" class="phone_search_li" onclick="init_part_shangquan()"><a
                                     href="#search_map"
                                     aria-controls="profile" role="tab"
-                                    data-toggle="tab"><span>地铁</span></a>
+                                    data-toggle="tab"
+                                    style="display: inline-block"><span>地铁</span></a>
                             </li>
                         </ul>
-                        <div class="tab-content" style="padding: 15px">
+                        <div class="tab-content">
                             <div id="xiaqu_part" role="tabpanel" class="tab-pane active">
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="active"><a href="#jingjiangqu_part"
@@ -260,9 +262,9 @@
                         </div>
 
                         <!--商圈热门位置begin-->
-                        <div class="tab-content" style="padding: 15px">
+                        <div class="tab-content">
                             <div class="tab-content" id="shangquan_part">
-                                <div id="jingjiangqu_part" role="tabpanel" class="tab-pane">
+                                <div id="jingjiangqu_part" role="tabpanel" class="tab-pane active">
                                     <ul class="nav nav-tabs" role="tablist">
                                         <li role="presentation" class="active"><a href="#"
                                                                                   aria-controls="home"
@@ -1023,6 +1025,22 @@
         $(".phone_last_img > p ").css("padding-top", (phone_last_img - last_link_length) / 2);
         $(".phone_last_img >p ").css("padding-bottom", (phone_last_img - last_link_length) / 2);
 
+        change_li_width();
+    };
+
+    var change_li_width = function () {
+        $(".nav-tabs>li>a").css("margin-right", 0);
+        /***设置区域选择的margin***/
+        var part_with = 75;
+        var tab_width = $("body").width()-4;
+        yusun = tab_width % part_with;
+        zhengshu = (tab_width - yusun) / part_with;
+        padding = (yusun) / zhengshu;
+        if (padding >= 0) {
+            total_padding = (15 + padding-1) / 2;
+            $(".nav-tabs>li>a").css("padding-left", total_padding);
+            $(".nav-tabs>li>a").css("padding-right", total_padding);
+        }
 
     };
 

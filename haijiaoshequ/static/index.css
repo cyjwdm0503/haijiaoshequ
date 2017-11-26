@@ -221,8 +221,14 @@ li > div > .thumbnail {
 .modal-dialog
 {
     width: auto;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
 }
-
+.modal-footer
+{
+    border-bottom: 1px solid #e5e5ef;
+}
 .phone_search_li
 {
     width: 50%;
@@ -234,26 +240,25 @@ li > div > .thumbnail {
 {
     border: none;
     background-color: transparent;
+    /* border: 1px solid grey; */
 }
 
 .nav-tabs>li.active>a >span
-{
-
-    background-color: #0fb4a8;
-    padding: inherit;
-    width: 50px;
-
-}
+{background-color: #0fb4a8;/* padding: inherit; */width: 60px;display: block;text-align: center;}
 
 .nav-tabs>li >a >span
 {
-    padding: inherit;
-    width: 50px;
+    /* padding: inherit; */
+    /* width: 50px; */
     color: black;
+    display: block;
+    width: 60px;
+    text-align: center;
 }
 
 .nav-tabs>li>a
 {
     border: 0px solid transparent;
-
+    /* width: 150px; */
+    /* border: 1px solid; */
 }
