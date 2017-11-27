@@ -167,13 +167,13 @@
                     <div>
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="phone_search_li" onclick="init_part_shangquan()"><a
+                            <li role="presentation" class="phone_search_li" onclick="init_part_shangquan(this)"><a
                                     href="#xiaqu_part"
                                     aria-controls="home"
                                     role="tab"
                                     data-toggle="tab" style="display: inline-block"><span>区域</span></a>
                             </li>
-                            <li role="presentation" class="phone_search_li" onclick="init_part_shangquan()"><a
+                            <li role="presentation" class="phone_search_li" onclick="init_part_shangquan(this)"><a
                                     href="#search_map"
                                     aria-controls="profile" role="tab"
                                     data-toggle="tab"
@@ -511,9 +511,10 @@
     </div>
 
     <script>
-        var init_part_shangquan = function () {
+        var init_part_shangquan = function (value) {
             $("#xiaqu_part > ul>li").removeClass("active");
              $("#search_map > ul>li").removeClass("active");
+             $(this.firstChild).setAttribute("aria-expanded",true);
             $(" #shangquan_part >div").removeClass("active");
             $(" #shangquan_part >div>ul>li").removeClass("active");
 
