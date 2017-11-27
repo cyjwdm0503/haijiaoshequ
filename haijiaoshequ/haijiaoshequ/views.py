@@ -5,29 +5,40 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 from django.template import loader
+import json
 
 
-def index(request,name='haijiaoshequ'):
-    template =  loader.get_template('index.html');
-    context = {'name':name}
+def index(request, name='haijiaoshequ'):
+    template = loader.get_template('index.html');
+    context = {'name': name}
     return HttpResponse(template.render(context, request))
 
 
-def search(request,name='haijiaoshequ'):
-    template =  loader.get_template('search.html');
-    context = {'name':name}
+def search(request, name='haijiaoshequ'):
+    template = loader.get_template('search.html');
+    context = {'name': name}
     return HttpResponse(template.render(context, request))
+
+
 # Create your views here.
 
 
-def apply(request,name='haijiaoshequ'):
-    template =  loader.get_template('apply.html');
-    context = {'name':name}
+def apply(request, name='haijiaoshequ'):
+    template = loader.get_template('apply.html');
+    context = {'name': name}
     return HttpResponse(template.render(context, request))
 
 
-
-def phone_index(request,name='haijiaoshequ'):
-    template =  loader.get_template('phone_index.html');
-    context = {'name':name}
+def phone_index(request, name='haijiaoshequ'):
+    template = loader.get_template('phone_index.html');
+    context = {'name': name}
     return HttpResponse(template.render(context, request))
+
+
+def menu(request, name="菜单"):
+    context = {'一级菜单': {'区域': {'锦江区':'锦江区', '青羊区':'青羊区', '金牛区':'金牛区', '成华区':'成华区', '龙泉驿':'龙泉驿', '温江区':'温江区', '双流县':'双流县', '高新区':'高新区', '高新西区':'高新西区', '天府新区':'天府新区'},
+                        '地铁': {'1号线':'1号线', '2号线':'2号线', '3号线':'3号线', '4号线':'4号线'}},
+               '二级菜单': {'锦江区': {'全部':'全部', '川师':'川师', '三圣乡':'三圣乡', '万达':'万达', '琉璃场':'琉璃场', '成仁路':'成仁路', '九眼桥':'九眼桥', '沙河堡':'沙河堡', '攀成钢':'攀成钢', '静居寺':'静居寺', '内环':'内环'},
+                        '青羊区': {'全部':'全部', '金沙':'金沙', '黄田坝':'黄田坝', '外光华':'外光华', '内光华':'内光华', '外金沙':'外金沙', '浣花小区':'浣花小区', '府南国际':'府南国际', '内环':'内环'}}}
+    text = json.dumps(context,encoding="UTF-8")
+    return HttpResponse(text)

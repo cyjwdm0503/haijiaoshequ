@@ -125,16 +125,23 @@
         var set_location = function (city) {
             if (city != null) {
                 $("#location").text(city);
+                init_menu();
             }
 
             else {
-                $("#location").text("安岳");
+                $("#location").text("成都");
+                init_menu();
             }
         }
 
         var get_select_location = function () {
             var city = $("#city").val();
             set_location(city);
+        }
+
+        var get_location = function () {
+            var city =  $("#location").text()
+            return city;
         }
     </script>
     <!---地理位置切换-->
@@ -237,22 +244,22 @@
                             </div>
                             <div id="一级菜单_地铁" role="tabpanel" class="tab-pane">
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="menu_one"><a href="#one"
+                                    <li role="presentation" class="menu_one"><a href="#一号线"
                                                                                 aria-controls="home"
                                                                                 role="tab"
                                                                                 data-toggle="tab"><span>1号线</span></a>
                                     </li>
-                                    <li role="presentation" class="menu_one "><a href="#two"
+                                    <li role="presentation" class="menu_one "><a href="#二号线"
                                                                                  aria-controls="profile"
                                                                                  role="tab"
                                                                                  data-toggle="tab"><span>2号线</span></a>
                                     </li>
-                                    <li role="presentation" class="menu_one "><a href="#three"
+                                    <li role="presentation" class="menu_one "><a href="#三号线"
                                                                                  aria-controls="profile"
                                                                                  role="tab"
                                                                                  data-toggle="tab"><span>3号线</span></a>
                                     </li>
-                                    <li role="presentation" class="menu_one "><a href="#four"
+                                    <li role="presentation" class="menu_one "><a href="#四号线"
                                                                                  aria-controls="profile"
                                                                                  role="tab"
                                                                                  data-toggle="tab"><span>4号线</span></a>
@@ -374,7 +381,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div id="one" role="tabpanel" class="tab-pane">
+                                <div id="一号线" role="tabpanel" class="tab-pane">
                                     <ul class="nav nav-tabs" role="tablist">
                                         <li role="presentation" class="menu_two"><a href="#"
                                                                                     aria-controls="home"
@@ -434,7 +441,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div id="two" role="tabpanel" class="tab-pane">
+                                <div id="二号线" role="tabpanel" class="tab-pane">
                                     <ul class="nav nav-tabs" role="tablist">
                                         <li role="presentation" class="menu_two"><a href="#"
                                                                                     aria-controls="home"
@@ -547,26 +554,22 @@
                 alert(menu_one + " " + menu_two);
             });
         });
+
+        var  init_menu = function () {
+           city =  get_location();
+           $.get("/menu/"+city,function (data,status) {
+               if(status == "success")
+               {
+                   alert(data);
+               }
+           });
+        };
+
     </script>
 </div>
 
 
-<script type="application/javascript">
-    var set_location = function (city) {
-        if (city != null) {
-            $("#location").text(city);
-        }
 
-        else {
-            $("#location").text("安岳");
-        }
-    }
-
-    var get_select_location = function () {
-        var city = $("#city").val();
-        set_location(city);
-    }
-</script>
 <!---小区位置切换-->
 
 <div class="page-header">
