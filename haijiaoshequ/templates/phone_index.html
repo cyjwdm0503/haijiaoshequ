@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
     <meta name="description" content="">
     <title>{{ name }} </title>
@@ -126,11 +126,13 @@
             if (city != null) {
                 $("#location").text(city);
                 init_menu();
+
             }
 
             else {
                 $("#location").text("成都");
                 init_menu();
+
             }
         }
 
@@ -140,7 +142,7 @@
         }
 
         var get_location = function () {
-            var city =  $("#location").text()
+            var city = $("#location").text()
             return city;
         }
     </script>
@@ -508,7 +510,7 @@
                     <!--小区地铁筛选--->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" id="cancel" data-dismiss="modal">取消</button>
-                        <button type="button" class="btn btn-info" id="select_location" onclick="get_select_location()"
+                        <button type="button" class="btn btn-info" id="select_location"
                                 data-dismiss="modal">提交
                         </button>
                     </div>
@@ -535,16 +537,18 @@
 
         };
 
+        ///取消所有页面的活动性
         var init_part_shangquan = function (value) {
             $("#一级菜单_区域 > ul>li").removeClass("active");
             $("#一级菜单_地铁 > ul>li").removeClass("active");
             $(" #二级菜单 >div").removeClass("active");
             $(" #二级菜单 >div>ul>li").removeClass("active");
         };
+
         ///监听辖区与商圈位置
         var menu_one = null;
         var menu_two = null;
-        $(document).ready(function () {
+        listen_menu = function () {
             $(".menu_one").click(function () {
                 menu_one = ($(this).find("span").text());
                 $(".menu_two").removeClass("active");
@@ -553,21 +557,78 @@
                 menu_two = ($(this).find("span").text());
                 alert(menu_one + " " + menu_two);
             });
-        });
-
-        var  init_menu = function () {
-           city =  get_location();
-           $.get("/menu/"+city,function (data,status) {
-               if(status == "success")
-               {
-                   alert(data);
-               }
-           });
         };
 
+        $(document).ready(function () {
+            listen_menu();
+        });
+
+        var init_menu = function () {
+
+            menu_two = null;
+            menu_one = null;
+
+            city = get_location();
+            $.get("/menu/" + city, function (data, status) {
+                if (status == "success") {
+                    var menu = eval(data);
+                    var menu_one = menu["一级菜单"];
+                    var menu_two = menu["二级菜单"];
+
+                    {
+                        var quyu = menu_one["区域"];
+                        $("#一级菜单_区域>ul ")[0].innerHTML = "";
+                        for (quyu_detail in quyu) {
+                            var li = "<li role=\"presentation\" class=\"menu_one\"><a href=\"#" + quyu_detail + "\"\n" +
+                                "aria-controls=\"home\"\n" +
+                                "role=\"tab\"\n" +
+                                "data-toggle=\"tab\"><span>" + quyu_detail + "</span></a>\n" +
+                                "</li>";
+                            var element = $("#一级菜单_区域 > ul");
+                            element.append(li);
+                        }
+                    }
+
+
+                    {
+                        var ditie = menu_one["地铁"];
+                        $("#一级菜单_地铁>ul")[0].innerHTML = "";
+                        for (ditie_detail in ditie) {
+                            var li = "<li role=\"presentation\" class=\"menu_one\"><a href=\"#" + ditie_detail + "\"\n" +
+                                "aria-controls=\"home\"\n" +
+                                "role=\"tab\"\n" +
+                                "data-toggle=\"tab\"><span>" + ditie_detail + "</span></a>\n" +
+                                "</li>"
+                            $("#一级菜单_地铁>ul").append(li);
+
+                        }
+                    }
+
+
+                    $("#二级菜单")[0].innerHTML = "";
+                    for (shangquan in menu_two) {
+                        var menu_two_shangquan = shangquan;
+                        var div = "<div id=\"" + menu_two_shangquan + "\" role=\"tabpanel\" class=\"tab-pane \">\n" +
+                            "<ul class=\"nav nav-tabs\" role=\"tablist\"></ul></div>";
+                        $("#二级菜单").append(div);
+                        for (shangquan_detail in menu_two[menu_two_shangquan]) {
+                            var detail = shangquan_detail;
+                            var li = "<li role=\"presentation\" class=\"menu_two\"><a href=\"#\"\n" +
+                                "aria-controls=\"home\"\n" +
+                                "role=\"tab\"\n" +
+                                "data-toggle=\"tab\"><span\n" +
+                                "id=\"all\">" + detail + "</span></a>\n" +
+                                "</li>";
+                            $("#" + menu_two_shangquan + ">ul").append(li);
+                        }
+                    }
+                    change_li_width();
+                    listen_menu();
+                }
+            });
+        };
     </script>
 </div>
-
 
 
 <!---小区位置切换-->
