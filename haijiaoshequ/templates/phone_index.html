@@ -57,7 +57,7 @@
                       id="sizing-addon1"><span class="glyphicon glyphicon-search"
                                                aria-hidden="true"></span></span>
                 <input type="text" class="form-control" style="border:1px  darkgrey;border-left-style: solid;"
-                       placeholder="请输入小区 商圈 街区" data-toggle="modal" data-target="#patyModal">
+                       placeholder="请输入小区 商圈 街区" id="part_shuangquan" data-toggle="modal" data-target="#patyModal">
                 <span class="input-group-btn">
         <button class="btn btn-default" type="button"
                 style="border:1px solid transparent;border-left-style: solid;border-left-color: darkgrey;">地图找房</button>
@@ -65,6 +65,21 @@
             </div><!-- /input-group -->
         </div>
     </div>
+
+    <script type="application/javascript">
+        var set_part_shangquan = function () {
+
+            var input_part_shuangquan = get_input_part_shuangquan();
+            var part = get_part();
+            var shang_quan = get_shang_quan();
+            var city = get_location();
+            $("#part_shuangquan").val(input_part_shuangquan + "," + city + "," + part + "," + shang_quan);
+
+        }
+        var get_part_shuangquan = function () {
+            return $("#part_shuangquan").val();
+        }
+    </script>
 
 
     <!--我的预算(元/月)-->
@@ -145,6 +160,9 @@
             var city = $("#location").text()
             return city;
         }
+        $(document).ready(function () {
+           get_select_location();
+        });
     </script>
     <!---地理位置切换-->
 
@@ -161,7 +179,7 @@
                             aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel"></h4>
                     <div>
-                        <input type="text" class="form-control"
+                        <input type="text" class="form-control" id="input_part_shangquan"
                                placeholder="请输入小区 商圈 街区">
                     </div>
                 </div>
@@ -197,51 +215,6 @@
                                                                                 role="tab"
                                                                                 data-toggle="tab"><span>锦江区</span></a>
                                     </li>
-                                    <li role="presentation" class="menu_one "><a href="#青羊区"
-                                                                                 aria-controls="profile"
-                                                                                 role="tab"
-                                                                                 data-toggle="tab"><span>青羊区</span></a>
-                                    </li>
-                                    <li role="presentation" class="menu_one "><a href="#金牛区"
-                                                                                 aria-controls="profile"
-                                                                                 role="tab"
-                                                                                 data-toggle="tab"><span>金牛区</span></a>
-                                    </li>
-                                    <li role="presentation" class="menu_one "><a href="#成华区"
-                                                                                 aria-controls="profile"
-                                                                                 role="tab"
-                                                                                 data-toggle="tab"><span>成华区</span></a>
-                                    </li>
-                                    <li role="presentation" class="menu_one "><a href="#"
-                                                                                 aria-controls="profile"
-                                                                                 role="tab"
-                                                                                 data-toggle="tab"><span>龙泉驿</span></a>
-                                    </li>
-                                    <li role="presentation" class="menu_one "><a href="#"
-                                                                                 aria-controls="profile"
-                                                                                 role="tab"
-                                                                                 data-toggle="tab"><span>温江区</span></a>
-                                    </li>
-                                    <li role="presentation" class="menu_one "><a href="#"
-                                                                                 aria-controls="profile"
-                                                                                 role="tab"
-                                                                                 data-toggle="tab"><span>双流县</span></a>
-                                    </li>
-                                    <li role="presentation" class="menu_one "><a href="#"
-                                                                                 aria-controls="profile"
-                                                                                 role="tab"
-                                                                                 data-toggle="tab"><span>高新区</span></a>
-                                    </li>
-                                    <li role="presentation" class="menu_one "><a href="#"
-                                                                                 aria-controls="profile"
-                                                                                 role="tab"
-                                                                                 data-toggle="tab"><span>高新西去</span></a>
-                                    </li>
-                                    <li role="presentation" class="menu_one "><a href="#"
-                                                                                 aria-controls="profile"
-                                                                                 role="tab"
-                                                                                 data-toggle="tab"><span>天府新区</span></a>
-                                    </li>
                                 </ul>
                             </div>
                             <div id="一级菜单_地铁" role="tabpanel" class="tab-pane">
@@ -250,21 +223,6 @@
                                                                                 aria-controls="home"
                                                                                 role="tab"
                                                                                 data-toggle="tab"><span>1号线</span></a>
-                                    </li>
-                                    <li role="presentation" class="menu_one "><a href="#二号线"
-                                                                                 aria-controls="profile"
-                                                                                 role="tab"
-                                                                                 data-toggle="tab"><span>2号线</span></a>
-                                    </li>
-                                    <li role="presentation" class="menu_one "><a href="#三号线"
-                                                                                 aria-controls="profile"
-                                                                                 role="tab"
-                                                                                 data-toggle="tab"><span>3号线</span></a>
-                                    </li>
-                                    <li role="presentation" class="menu_one "><a href="#四号线"
-                                                                                 aria-controls="profile"
-                                                                                 role="tab"
-                                                                                 data-toggle="tab"><span>4号线</span></a>
                                     </li>
                                 </ul>
                             </div>
@@ -286,51 +244,6 @@
                                                                                      role="tab"
                                                                                      data-toggle="tab"><span>川师</span></a>
                                         </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>三圣乡</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>万达</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>琉璃场</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>成仁路</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>九眼桥</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>沙河堡</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>攀成钢</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>静居寺</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>内环</span></a>
-                                        </li>
                                     </ul>
                                 </div>
                                 <div id="青羊区" role="tabpanel" class="tab-pane">
@@ -346,41 +259,6 @@
                                                                                      role="tab"
                                                                                      data-toggle="tab"><span>金沙</span></a>
                                         </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>黄田坝</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>外光华</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>内光华</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>外金沙</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>浣花小区</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>府南国际</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>内环</span></a>
-                                        </li>
                                     </ul>
                                 </div>
                                 <div id="一号线" role="tabpanel" class="tab-pane">
@@ -395,51 +273,6 @@
                                                                                      aria-controls="profile"
                                                                                      role="tab"
                                                                                      data-toggle="tab"><span>川师</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>升仙湖</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>火车北站</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>琉璃场</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>成仁路</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>九眼桥</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>沙河堡</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>攀成钢</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>静居寺</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>内环</span></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -461,36 +294,6 @@
                                                                                      role="tab"
                                                                                      data-toggle="tab"><span>犀浦</span></a>
                                         </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>天和路</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>内光华</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>外金沙</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>浣花小区</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>府南国际</span></a>
-                                        </li>
-                                        <li role="presentation" class="menu_two "><a href="#"
-                                                                                     aria-controls="profile"
-                                                                                     role="tab"
-                                                                                     data-toggle="tab"><span>内环</span></a>
-                                        </li>
                                     </ul>
                                 </div>
                                 <!------热门位置end---->
@@ -510,7 +313,7 @@
                     <!--小区地铁筛选--->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" id="cancel" data-dismiss="modal">取消</button>
-                        <button type="button" class="btn btn-info" id="select_location"
+                        <button type="button" class="btn btn-info" id="select_location" onclick="set_part_shangquan()"
                                 data-dismiss="modal">提交
                         </button>
                     </div>
@@ -555,9 +358,30 @@
             });
             $(".menu_two").click(function () {
                 menu_two = ($(this).find("span").text());
-                alert(menu_one + " " + menu_two);
             });
         };
+
+        var get_input_part_shuangquan = function () {
+            part_shuangquan = $("#input_part_shangquan").val();
+            if (part_shuangquan == null)
+                return "";
+            else
+                return part_shuangquan;
+        }
+
+        var get_part = function () {
+            if (menu_one == null)
+                return ""
+            return menu_one;
+        }
+
+        var get_shang_quan = function () {
+            if (menu_two == null)
+                return ""
+            else
+                return menu_two;
+        }
+
 
         $(document).ready(function () {
             listen_menu();
@@ -627,6 +451,8 @@
                 }
             });
         };
+
+
     </script>
 </div>
 
