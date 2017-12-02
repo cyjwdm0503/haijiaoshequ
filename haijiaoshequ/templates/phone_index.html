@@ -336,6 +336,9 @@
 
     <script>
 
+        var menu_one = null;
+        var menu_two = null;
+
         var change_li_width = function () {
             $(".nav-tabs>li>a").css("margin-right", 0);
             /***设置区域选择的margin***/
@@ -358,15 +361,17 @@
             $("#一级菜单_地铁 > ul>li").removeClass("active");
             $(" #二级菜单 >div").removeClass("active");
             $(" #二级菜单 >div>ul>li").removeClass("active");
+            menu_two = null;
+            menu_one = null;
         };
 
         ///监听辖区与商圈位置
-        var menu_one = null;
-        var menu_two = null;
+
         listen_menu = function () {
             $(".menu_one").click(function () {
                 menu_one = ($(this).find("span").text());
                 $(".menu_two").removeClass("active");
+                menu_two =  null;
             });
             $(".menu_two").click(function () {
                 menu_two = ($(this).find("span").text());
