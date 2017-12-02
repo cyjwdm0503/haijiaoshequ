@@ -202,6 +202,12 @@ li > div > .thumbnail {
 }
 
 .phone_last_img {
+    max-width: 240px;
+    max-height: 240px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 3px 3px 10px 0 hsla(0, 20%, 4%, 0.36);
     margin: 0 auto;
     width: 60px;
     text-align: center;

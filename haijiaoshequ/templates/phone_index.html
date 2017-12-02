@@ -31,6 +31,8 @@
     <link rel="stylesheet" href="{% static '/range/css/jquery.range.css' %}">
     <link rel="stylesheet" href="{% static '/touchslider/css/style.css' %}">
     <script src="{% static '/touchslider/js/touchslider.js' %}"></script>
+    <script type="text/javascript"
+            src="http://api.map.baidu.com/api?v=2.0&ak=4POwYrBfonLcG2gFxfc1URc4EIyHQ84W"></script>
 </head>
 <!--设定图片的大小，使手机屏幕能看见2个半-->
 <script type="text/javascript">
@@ -70,12 +72,17 @@
         var set_part_shangquan = function () {
 
             var input_part_shuangquan = get_input_part_shuangquan();
-            var part = get_part();
-            var shang_quan = get_shang_quan();
+
             var city = get_location();
-            $("#part_shuangquan").val(input_part_shuangquan + "," + city + "," + part + "," + shang_quan);
+
+            var part = get_part();
+
+            var shang_quan = get_shang_quan();
+
+            $("#part_shuangquan").val(input_part_shuangquan + " " + city + " " + part + " " + shang_quan);
 
         }
+
         var get_part_shuangquan = function () {
             return $("#part_shuangquan").val();
         }
@@ -113,7 +120,7 @@
                         <div class="form-group">
                             <label for="city">当前城市</label>
                             <label id='currcity' class="form-control">
-                                成都
+                                成都市
                             </label>
                         </div>
                         <div class="form-group">
@@ -140,15 +147,16 @@
         var set_location = function (city) {
             if (city != null) {
                 $("#location").text(city);
-                init_menu();
 
             }
 
             else {
-                $("#location").text("成都");
-                init_menu();
+                $("#location").text("成都市");
+
 
             }
+            init_menu();
+            set_modal_cur_city();
         }
 
         var get_select_location = function () {
@@ -160,8 +168,12 @@
             var city = $("#location").text()
             return city;
         }
+        var set_modal_cur_city = function () {
+            curcity = $("#location ").text();
+            $("#currcity").text(curcity);
+        }
         $(document).ready(function () {
-           get_select_location();
+            BAIDU_GetCity();
         });
     </script>
     <!---地理位置切换-->
@@ -371,7 +383,7 @@
 
         var get_part = function () {
             if (menu_one == null)
-                return ""
+                return "";
             return menu_one;
         }
 
@@ -469,8 +481,10 @@
             <li style="display:inline;float: left; display: inline;">
                 <div>
                     <div class="thumbnail">
-                        <div class="phone_img_border"><img class="img-responsive "
-                                                           src="{% static 'phone/全部合租/全部合租.jpg' %}" alt="房间1">
+                        <div class="phone_img_border" value="room1"><img class="img-responsive "
+                                                                       src="{% static 'phone/全部合租/全部合租.jpg' %}"
+                                                                       alt="房间1">
+
                         </div>
                         <div class="caption">
                             <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
@@ -482,8 +496,9 @@
             <li style="display:inline;float: left;  ">
                 <div>
                     <div class="thumbnail">
-                        <div class="phone_img_border"><img class="img-responsive "
-                                                           src="{% static 'phone/全部合租/房间1.jpg' %}" alt="房间1">
+                        <div class="phone_img_border" value="room2"><img class="img-responsive "
+                                                                       src="{% static 'phone/全部合租/房间1.jpg' %}"
+                                                                       alt="房间1">
                         </div>
                         <div class="caption">
                             <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
@@ -559,8 +574,8 @@
             </li>
             <li style=" float: left; display: inline;">
                 <div>
-                    <div class="phone_img_border phone_last_img">
-                        <p>点<br>击<br>查<br>看<br>更<br>多</p>
+                    <div class=" phone_last_img" value="/more_hezu/成都市">
+                            <p>点<br>击<br>查<br>看<br>更<br>多</p>
                     </div>
                 </div>
             </li>
@@ -582,6 +597,7 @@
                         <div class="caption">
                             <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
                             <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+
                         </div>
                     </div>
                 </div>
@@ -595,6 +611,7 @@
                         <div class="caption">
                             <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
                             <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+
                         </div>
                     </div>
                 </div>
@@ -608,6 +625,7 @@
                         <div class="caption">
                             <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
                             <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+
                         </div>
                     </div>
                 </div>
@@ -621,6 +639,7 @@
                         <div class="caption">
                             <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
                             <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+
                         </div>
                     </div>
                 </div>
@@ -634,6 +653,7 @@
                         <div class="caption">
                             <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
                             <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+
                         </div>
                     </div>
                 </div>
@@ -647,6 +667,7 @@
                         <div class="caption">
                             <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
                             <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+
                         </div>
                     </div>
                 </div>
@@ -660,22 +681,35 @@
                         <div class="caption">
                             <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
                             <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+
                         </div>
                     </div>
                 </div>
             </li>
             <li style=" float: left; display: inline;">
                 <div>
-                    <div class="phone_img_border phone_last_img">
-                        <p>点<br>击<br>查<br>看<br>更<br>多</p>
+                    <div class=" phone_last_img" value="/more_zhengzu/成都市">
+                            <p>点<br>击<br>查<br>看<br>更<br>多</p>
                     </div>
                 </div>
             </li>
-
         </ul>
     </div>
 
+    <script>
+        ///监控图片按钮
+        $(document).ready(function () {
+            $(".phone_img_border").click(function () {
+                var room = $(this);
+                alert(room.children("img").attr("alt"));
+            });
+            $(".phone_last_img").click(function () {
+               var  more = $(this) ;
+               alert(more.attr("value"));
+            });
+        });
 
+    </script>
     <!--查找结果-->
 
 
@@ -957,6 +991,24 @@
     }
 
 </script>
+<script>
+    ///百度地图API
+    // 百度地图API功能
+    var BAIDU_city = null;
 
+    var BAIDU_SetCity = function (city) {
+        BAIDU_city = city.name;
+        set_location(BAIDU_city);
+    };
+    var BAIDU_GetCity = function () {
+        GetCity();
+        return BAIDU_city;
+    };
+    var GetCity = function () {
+        var myCity = new BMap.LocalCity();
+        myCity.get(BAIDU_SetCity);
+    };
+
+</script>
 </body>
 </html>
