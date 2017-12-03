@@ -99,11 +99,81 @@
         <div class="col-xs-10 text-center">
             <div class="range">
                 <input class="range-slider" type="hidden" id="price" value="300,1250" style="display: none;">
+
             </div>
+            <input class="" type="hidden" id="p1rice" value="300,1250" style="display: none;">
         </div>
         <div class="col-xs-1"></div>
     </div>
 
+    <script src="{% static 'range/js/jquery.range.js' %} "></script>
+    <script type="text/javascript">
+        $(function () {
+
+
+            $('.range-slider').jRange({
+                onstatechange: price_changed,
+                from: 0,
+                to: 2500,
+                step: 50,
+                scale: [0, 500, 1000, 1500, 2000, 2500],
+                format: '%s',
+                width: $(".range").width(),
+                showLabels: true,
+                showScale: true,
+                isRange: true
+            });
+
+
+            $("#g2").click(function () {
+                var aa = $(".range-slider").val();
+                alert(aa);
+            });
+
+            $(".range>div").css("width", "100%");
+        });
+
+
+        var price_changed = function () {
+            set_price($("#price").val());
+            Search();
+        };
+
+
+        var min_price = 0;
+        var max_price = 0;
+        var set_price = function (price) {
+            price_arry = price.split(",");
+            min_price = price_arry[0];
+            max_price = price_arry[1];
+        };
+        var get_min_price = function () {
+            return min_price;
+        }
+        var get_max_price = function () {
+            return max_price;
+        }
+
+        //查询间隔
+        var search_span = 500;
+        var last_search_time = 0;
+        var Search = function () {
+            if ((new Date()).getTime() - last_search_time < 500)
+                return;
+            last_search_time = (new Date()).getTime();
+
+            if ($("#part_shuangquan").val() == "") {
+                alert("请先选择小区 商圈 街区")
+                return;
+            }
+
+            //发送查询
+            alert("发送查询" + get_min_price() + get_max_price());
+            hidden_default_result();
+
+
+        }
+    </script>
 
     <!---地理位置切换-->
     <!-- Modal -->
@@ -371,7 +441,7 @@
             $(".menu_one").click(function () {
                 menu_one = ($(this).find("span").text());
                 $(".menu_two").removeClass("active");
-                menu_two =  null;
+                menu_two = null;
             });
             $(".menu_two").click(function () {
                 menu_two = ($(this).find("span").text());
@@ -476,446 +546,727 @@
 
 <!---小区位置切换-->
 
-<div class="page-header">
-    <!--查找结果-->
-    <div class="container-fluid">
-        <div><h4 class="text-left">合租</h4></div>
-    </div>
-    <div class="swipe">
-        <ul id="slider1">
-            <li style="display:inline;float: left; display: inline;">
-                <div>
-                    <div class="thumbnail">
-                        <div class="phone_img_border" value="room1"><img class="img-responsive "
-                                                                       src="{% static 'phone/全部合租/全部合租.jpg' %}"
-                                                                       alt="房间1">
+<!---查询到的房子-->
+<div class="" id="search_result">
+    <div>
+        <nav aria-label="">
+            <ul class="pager search_room_info" style="margin: auto" id="num_info_doc">
+                <li><span id="num_info">已经为你匹配XXX套房</span></li>
+            </ul>
+        </nav>
 
-                        </div>
-                        <div class="caption">
-                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
-                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li style="display:inline;float: left;  ">
-                <div>
-                    <div class="thumbnail">
-                        <div class="phone_img_border" value="room2"><img class="img-responsive "
-                                                                       src="{% static 'phone/全部合租/房间1.jpg' %}"
-                                                                       alt="房间1">
-                        </div>
-                        <div class="caption">
-                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
-                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li style=" float: left; display: inline;">
-                <div>
-                    <div class="thumbnail">
-                        <div class="phone_img_border"><img class="img-responsive "
-                                                           src="{% static 'phone/全部合租/房间2.jpg' %}" alt="房间1">
-                        </div>
-                        <div class="caption">
-                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
-                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li style=" float: left; display: inline;">
-                <div>
-                    <div class="thumbnail">
-                        <div class="phone_img_border"><img class="img-responsive "
-                                                           src="{% static 'phone/全部合租/房间3.jpg' %}" alt="房间1">
-                        </div>
-                        <div class="caption">
-                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
-                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li style=" float: left; display: inline;">
-                <div>
-                    <div class="thumbnail">
-                        <div class="phone_img_border"><img class="img-responsive "
-                                                           src="{% static 'phone/全部合租/房间4.jpg' %}" alt="房间1">
-                        </div>
-                        <div class="caption">
-                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
-                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li style=" float: left; display: inline;">
-                <div>
-                    <div class="thumbnail">
-                        <div class="phone_img_border"><img class="img-responsive "
-                                                           src="{% static 'phone/全部整租/房间1.jpg' %}" alt="房间1">
-                        </div>
-                        <div class="caption">
-                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
-                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li style=" float: left; display: inline;">
-                <div>
-                    <div class="thumbnail">
-                        <div class="phone_img_border"><img class="img-responsive "
-                                                           src="{% static 'phone/全部合租/房间5.jpg' %}" alt="房间1">
-                        </div>
-                        <div class="caption">
-                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
-                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li style=" float: left; display: inline;">
-                <div>
-                    <div class=" phone_last_img" value="/more_hezu/成都市">
-                            <p>点<br>击<br>查<br>看<br>更<br>多</p>
-                    </div>
-                </div>
-            </li>
-
-
-        </ul>
-    </div>
-    <div class="container-fluid">
-        <div><h4 class="text-left">整租</h4></div>
-    </div>
-    <div class="swipe">
-        <ul id="slider2">
-            <li style="display:inline;float: left;  ">
-                <div>
-                    <div class="thumbnail">
-                        <div class="phone_img_border"><img class="img-responsive "
-                                                           src="{% static 'phone/全部整租/全部整租.jpg' %}" alt="房间1">
-                        </div>
-                        <div class="caption">
-                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
-                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
-
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li style=" float: left; display: inline;">
-                <div>
-                    <div class="thumbnail">
-                        <div class="phone_img_border"><img class="img-responsive "
-                                                           src="{% static 'phone/全部整租/房间1.jpg' %}" alt="房间1">
-                        </div>
-                        <div class="caption">
-                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
-                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
-
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li style=" float: left; display: inline;">
-                <div>
-                    <div class="thumbnail">
-                        <div class="phone_img_border"><img class="img-responsive "
-                                                           src="{% static 'phone/全部整租/房间2.jpg' %}" alt="房间1">
-                        </div>
-                        <div class="caption">
-                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
-                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
-
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li style=" float: left; display: inline;">
-                <div>
-                    <div class="thumbnail">
-                        <div class="phone_img_border"><img class="img-responsive "
-                                                           src="{% static 'phone/全部整租/房间3.jpg' %}" alt="房间1">
-                        </div>
-                        <div class="caption">
-                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
-                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
-
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li style=" float: left; display: inline;">
-                <div>
-                    <div class="thumbnail">
-                        <div class="phone_img_border"><img class="img-responsive "
-                                                           src="{% static 'phone/全部整租/房间4.jpg' %}" alt="房间1">
-                        </div>
-                        <div class="caption">
-                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
-                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
-
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li style=" float: left; display: inline;">
-                <div>
-                    <div class="thumbnail">
-                        <div class="phone_img_border"><img class="img-responsive "
-                                                           src="{% static 'phone/全部整租/房间1.jpg' %}" alt="房间1">
-                        </div>
-                        <div class="caption">
-                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
-                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
-
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li style=" float: left; display: inline;">
-                <div>
-                    <div class="thumbnail">
-                        <div class="phone_img_border"><img class="img-responsive "
-                                                           src="{% static 'phone/全部整租/房间5.jpg' %}" alt="房间1">
-                        </div>
-                        <div class="caption">
-                            <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
-                            <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
-
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li style=" float: left; display: inline;">
-                <div>
-                    <div class=" phone_last_img" value="/more_zhengzu/成都市">
-                            <p>点<br>击<br>查<br>看<br>更<br>多</p>
-                    </div>
-                </div>
-            </li>
-        </ul>
+        <script>
+            var show_num_info = function (val) {
+                $("#num_info").text(val);
+                $("#num_info_doc").show("normal");
+                $("#num_info_doc").hide("slow");
+            }
+        </script>
     </div>
 
+    <!--显示房屋信息--->
+    <div class="">
+        <div>
+            <div class="search_room_info ">
+                <div class="phone_info_search_border">
+                    <h5 class="">来自于十里彩云间，理工学子大家都懂的</h5>
+                    <div style="margin: 10px 0px 10px 0px ">
+                        <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span></div>
+                    <div>
+                        <p>
+                            <span class="text-primary ">09</span><span>㎡</span>
+                            <span class="text-primary ">09/21</span><span>楼</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="phone_img_search_boder"><img class="img-responsive "
+                                                         src="{% static 'phone/全部合租/房间1.jpg' %}"
+                                                         alt="房间1">
+                </div>
+                <div class="search_room_info_tag">
+                    <span class="badge  ">理工大学</span>
+                    <span class="badge  ">四川大学</span>
+                    <span class="badge  ">西华大学</span>
+                    <span class="badge  ">电子科大</span>
+                    <span class="badge  ">成都信工</span>
+                    <span class="badge  ">成都大学</span>
+                    <span class="badge  ">四川师范</span>
+                </div>
+            </div>
+            <div class="search_room_info ">
+                <div class="phone_info_search_border">
+                    <h5 class="">来自于十里彩云间，理工学子大家都懂的</h5>
+                    <div style="margin: 10px 0px 10px 0px ">
+                        <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span></div>
+                    <div>
+                        <p>
+                            <span class="text-primary ">09</span><span>㎡</span>
+                            <span class="text-primary ">09/21</span><span>楼</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="phone_img_search_boder"><img class="img-responsive "
+                                                         src="{% static 'phone/全部合租/房间1.jpg' %}"
+                                                         alt="房间1">
+                </div>
+                <div class="search_room_info_tag">
+                    <span class="badge  ">理工大学</span>
+                    <span class="badge  ">四川大学</span>
+                    <span class="badge  ">西华大学</span>
+                    <span class="badge  ">电子科大</span>
+                    <span class="badge  ">成都信工</span>
+                    <span class="badge  ">成都大学</span>
+                    <span class="badge  ">四川师范</span>
+                </div>
+            </div>
+            <div class="search_room_info ">
+                <div class="phone_info_search_border">
+                    <h5 class="">来自于十里彩云间，理工学子大家都懂的</h5>
+                    <div style="margin: 10px 0px 10px 0px ">
+                        <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span></div>
+                    <div>
+                        <p>
+                            <span class="text-primary ">09</span><span>㎡</span>
+                            <span class="text-primary ">09/21</span><span>楼</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="phone_img_search_boder"><img class="img-responsive "
+                                                         src="{% static 'phone/全部合租/房间1.jpg' %}"
+                                                         alt="房间1">
+                </div>
+                <div class="search_room_info_tag">
+                    <span class="badge  ">理工大学</span>
+                    <span class="badge  ">四川大学</span>
+                    <span class="badge  ">西华大学</span>
+                    <span class="badge  ">电子科大</span>
+                    <span class="badge  ">成都信工</span>
+                    <span class="badge  ">成都大学</span>
+                    <span class="badge  ">四川师范</span>
+                </div>
+            </div>
+            <div class="search_room_info ">
+                <div class="phone_info_search_border">
+                    <h5 class="">来自于十里彩云间，理工学子大家都懂的</h5>
+                    <div style="margin: 10px 0px 10px 0px ">
+                        <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span></div>
+                    <div>
+                        <p>
+                            <span class="text-primary ">09</span><span>㎡</span>
+                            <span class="text-primary ">09/21</span><span>楼</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="phone_img_search_boder"><img class="img-responsive "
+                                                         src="{% static 'phone/全部合租/房间1.jpg' %}"
+                                                         alt="房间1">
+                </div>
+                <div class="search_room_info_tag">
+                    <span class="badge  ">理工大学</span>
+                    <span class="badge  ">四川大学</span>
+                    <span class="badge  ">西华大学</span>
+                    <span class="badge  ">电子科大</span>
+                    <span class="badge  ">成都信工</span>
+                    <span class="badge  ">成都大学</span>
+                    <span class="badge  ">四川师范</span>
+                </div>
+            </div>
+            <div class="search_room_info ">
+                <div class="phone_info_search_border">
+                    <h5 class="">来自于十里彩云间，理工学子大家都懂的</h5>
+                    <div style="margin: 10px 0px 10px 0px ">
+                        <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span></div>
+                    <div>
+                        <p>
+                            <span class="text-primary ">09</span><span>㎡</span>
+                            <span class="text-primary ">09/21</span><span>楼</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="phone_img_search_boder"><img class="img-responsive "
+                                                         src="{% static 'phone/全部合租/房间1.jpg' %}"
+                                                         alt="房间1">
+                </div>
+                <div class="search_room_info_tag">
+                    <span class="badge  ">理工大学</span>
+                    <span class="badge  ">四川大学</span>
+                    <span class="badge  ">西华大学</span>
+                    <span class="badge  ">电子科大</span>
+                    <span class="badge  ">成都信工</span>
+                    <span class="badge  ">成都大学</span>
+                    <span class="badge  ">四川师范</span>
+                </div>
+            </div>
+            <div class="search_room_info ">
+                <div class="phone_info_search_border">
+                    <h5 class="">来自于十里彩云间，理工学子大家都懂的</h5>
+                    <div style="margin: 10px 0px 10px 0px ">
+                        <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span></div>
+                    <div>
+                        <p>
+                            <span class="text-primary ">09</span><span>㎡</span>
+                            <span class="text-primary ">09/21</span><span>楼</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="phone_img_search_boder"><img class="img-responsive "
+                                                         src="{% static 'phone/全部合租/房间1.jpg' %}"
+                                                         alt="房间1">
+                </div>
+                <div class="search_room_info_tag">
+                    <span class="badge  ">理工大学</span>
+                    <span class="badge  ">四川大学</span>
+                    <span class="badge  ">西华大学</span>
+                    <span class="badge  ">电子科大</span>
+                    <span class="badge  ">成都信工</span>
+                    <span class="badge  ">成都大学</span>
+                    <span class="badge  ">四川师范</span>
+                </div>
+            </div>
+            <div class="search_room_info ">
+                <div class="phone_info_search_border">
+                    <h5 class="">来自于十里彩云间，理工学子大家都懂的</h5>
+                    <div style="margin: 10px 0px 10px 0px ">
+                        <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span></div>
+                    <div>
+                        <p>
+                            <span class="text-primary ">09</span><span>㎡</span>
+                            <span class="text-primary ">09/21</span><span>楼</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="phone_img_search_boder"><img class="img-responsive "
+                                                         src="{% static 'phone/全部合租/房间1.jpg' %}"
+                                                         alt="房间1">
+                </div>
+                <div class="search_room_info_tag">
+                    <span class="badge  ">理工大学</span>
+                    <span class="badge  ">四川大学</span>
+                    <span class="badge  ">西华大学</span>
+                    <span class="badge  ">电子科大</span>
+                    <span class="badge  ">成都信工</span>
+                    <span class="badge  ">成都大学</span>
+                    <span class="badge  ">四川师范</span>
+                </div>
+            </div>
+            <div class="search_room_info ">
+                <div class="phone_info_search_border">
+                    <h5 class="">来自于十里彩云间，理工学子大家都懂的</h5>
+                    <div style="margin: 10px 0px 10px 0px ">
+                        <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span></div>
+                    <div>
+                        <p>
+                            <span class="text-primary ">09</span><span>㎡</span>
+                            <span class="text-primary ">09/21</span><span>楼</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="phone_img_search_boder"><img class="img-responsive "
+                                                         src="{% static 'phone/全部合租/房间1.jpg' %}"
+                                                         alt="房间1">
+                </div>
+                <div class="search_room_info_tag">
+                    <span class="badge  ">理工大学</span>
+                    <span class="badge  ">四川大学</span>
+                    <span class="badge  ">西华大学</span>
+                    <span class="badge  ">电子科大</span>
+                    <span class="badge  ">成都信工</span>
+                    <span class="badge  ">成都大学</span>
+                    <span class="badge  ">四川师范</span>
+                </div>
+            </div>
+            <div class="search_room_info ">
+                <div class="phone_info_search_border">
+                    <h5 class="">来自于十里彩云间，理工学子大家都懂的</h5>
+                    <div style="margin: 10px 0px 10px 0px ">
+                        <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span></div>
+                    <div>
+                        <p>
+                            <span class="text-primary ">09</span><span>㎡</span>
+                            <span class="text-primary ">09/21</span><span>楼</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="phone_img_search_boder"><img class="img-responsive "
+                                                         src="{% static 'phone/全部合租/房间1.jpg' %}"
+                                                         alt="房间1">
+                </div>
+                <div class="search_room_info_tag">
+                    <span class="badge  ">理工大学</span>
+                    <span class="badge  ">四川大学</span>
+                    <span class="badge  ">西华大学</span>
+                    <span class="badge  ">电子科大</span>
+                    <span class="badge  ">成都信工</span>
+                    <span class="badge  ">成都大学</span>
+                    <span class="badge  ">四川师范</span>
+                </div>
+            </div>
+        </div>
+        <script>
+            var set_phone_info_search_border_width = function () {
+                var maxwidth = $(".search_room_info").width();
+                width = maxwidth - 125;
+                $(".phone_info_search_border").width(width);
+            }
+        </script>
+    </div>
+
+    <div>
+        <nav aria-label="">
+            <ul class="pager">
+                <li><span id="flush_more">更多....</span></li>
+            </ul>
+        </nav>
+    </div>
     <script>
-        ///监控图片按钮
         $(document).ready(function () {
-            $(".phone_img_border").click(function () {
-                var room = $(this);
-                alert(room.children("img").attr("alt"));
-            });
-            $(".phone_last_img").click(function () {
-               var  more = $(this) ;
-               alert(more.attr("value"));
+            $("#flush_more").click(function () {
+                $("#flush_more").text("加载中....")
+
+                //异步刷新
+
             });
         });
-
     </script>
-    <!--查找结果-->
-
-
-</div>
-
-<div class="page-header">
-    <div class="container-fluid">
-        <div><h4 class="text-left">活动</h4></div>
-    </div>
-    <div class="swipe">
-        <ul id="slider3">
-            <li style="display:inline;float: left; display: inline;">
-                <div>
-                    <div class="thumbnail">
-                        <div class="phone_img_huodong_border"><img class="img-responsive "
-                                                                   src="{% static 'phone/活动/活动1.png' %}" alt="房间1">
-                        </div>
-                        <div class="caption">
-                            <p class="phone_img_huodong_hidden">来自于十里彩云间，理工学子大家都懂的</p>
-
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li style="display:inline;float: left;  ">
-                <div>
-                    <div class="thumbnail">
-                        <div class="phone_img_huodong_border"><img class="img-responsive "
-                                                                   src="{% static 'phone/活动/活动2.jpg' %}" alt="房间1">
-                        </div>
-                        <div class="caption">
-                            <p class="phone_img_huodong_hidden">来自于十里彩云间，理工学子大家都懂的</p>
-
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li style="display:inline;float: left;  ">
-                <div>
-                    <div class="thumbnail">
-                        <div class="phone_img_huodong_border"><img class="img-responsive "
-                                                                   src="{% static 'phone/活动/活动3.jpg' %}" alt="房间1">
-                        </div>
-                        <div class="caption">
-                            <p class="phone_img_huodong_hidden">来自于十里彩云间，理工学子大家都懂的</p>
-
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li style="display:inline;float: left;  ">
-                <div>
-                    <div class="thumbnail">
-                        <div class="phone_img_huodong_border"><img class="img-responsive "
-                                                                   src="{% static 'phone/活动/活动4.png' %}" alt="房间1">
-                        </div>
-                        <div class="caption">
-                            <p class="phone_img_huodong_hidden">来自于十里彩云间，理工学子大家都懂的</p>
-
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li style="display:inline;float: left;  ">
-                <div>
-                    <div class="thumbnail">
-                        <div class="phone_img_huodong_border"><img class="img-responsive "
-                                                                   src="{% static 'phone/活动/活动5.png' %}" alt="房间1">
-                        </div>
-                        <div class="caption">
-                            <p class="phone_img_huodong_hidden">来自于十里彩云间，理工学子大家都懂的</p>
-
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
 </div>
 
 
-<div id="jiamengyoushi">
+<!--缺省的主页列表-->
+<div class="default_result">
+    <div class="page-header">
+        <!--查找结果-->
+        <div class="container-fluid">
+            <div><h4 class="text-left">合租</h4></div>
+        </div>
+        <div class="swipe">
+            <ul id="slider1">
+                <li style="display:inline;float: left; display: inline;">
+                    <div>
+                        <div class="thumbnail">
+                            <div class="phone_img_border" value="room1"><img class="img-responsive "
+                                                                             src="{% static 'phone/全部合租/全部合租.jpg' %}"
+                                                                             alt="房间1">
+
+                            </div>
+                            <div class="caption">
+                                <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                                <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li style="display:inline;float: left;  ">
+                    <div>
+                        <div class="thumbnail">
+                            <div class="phone_img_border" value="room2"><img class="img-responsive "
+                                                                             src="{% static 'phone/全部合租/房间1.jpg' %}"
+                                                                             alt="房间1">
+                            </div>
+                            <div class="caption">
+                                <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                                <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li style=" float: left; display: inline;">
+                    <div>
+                        <div class="thumbnail">
+                            <div class="phone_img_border"><img class="img-responsive "
+                                                               src="{% static 'phone/全部合租/房间2.jpg' %}" alt="房间1">
+                            </div>
+                            <div class="caption">
+                                <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                                <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li style=" float: left; display: inline;">
+                    <div>
+                        <div class="thumbnail">
+                            <div class="phone_img_border"><img class="img-responsive "
+                                                               src="{% static 'phone/全部合租/房间3.jpg' %}" alt="房间1">
+                            </div>
+                            <div class="caption">
+                                <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                                <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li style=" float: left; display: inline;">
+                    <div>
+                        <div class="thumbnail">
+                            <div class="phone_img_border"><img class="img-responsive "
+                                                               src="{% static 'phone/全部合租/房间4.jpg' %}" alt="房间1">
+                            </div>
+                            <div class="caption">
+                                <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                                <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li style=" float: left; display: inline;">
+                    <div>
+                        <div class="thumbnail">
+                            <div class="phone_img_border"><img class="img-responsive "
+                                                               src="{% static 'phone/全部整租/房间1.jpg' %}" alt="房间1">
+                            </div>
+                            <div class="caption">
+                                <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                                <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li style=" float: left; display: inline;">
+                    <div>
+                        <div class="thumbnail">
+                            <div class="phone_img_border"><img class="img-responsive "
+                                                               src="{% static 'phone/全部合租/房间5.jpg' %}" alt="房间1">
+                            </div>
+                            <div class="caption">
+                                <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                                <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li style=" float: left; display: inline;">
+                    <div>
+                        <div class=" phone_last_img" value="/more_hezu/成都市">
+                            <p>点<br>击<br>查<br>看<br>更<br>多</p>
+                        </div>
+                    </div>
+                </li>
+
+
+            </ul>
+        </div>
+        <div class="container-fluid">
+            <div><h4 class="text-left">整租</h4></div>
+        </div>
+        <div class="swipe">
+            <ul id="slider2">
+                <li style="display:inline;float: left;  ">
+                    <div>
+                        <div class="thumbnail">
+                            <div class="phone_img_border"><img class="img-responsive "
+                                                               src="{% static 'phone/全部整租/全部整租.jpg' %}" alt="房间1">
+                            </div>
+                            <div class="caption">
+                                <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                                <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li style=" float: left; display: inline;">
+                    <div>
+                        <div class="thumbnail">
+                            <div class="phone_img_border"><img class="img-responsive "
+                                                               src="{% static 'phone/全部整租/房间1.jpg' %}" alt="房间1">
+                            </div>
+                            <div class="caption">
+                                <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                                <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li style=" float: left; display: inline;">
+                    <div>
+                        <div class="thumbnail">
+                            <div class="phone_img_border"><img class="img-responsive "
+                                                               src="{% static 'phone/全部整租/房间2.jpg' %}" alt="房间1">
+                            </div>
+                            <div class="caption">
+                                <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                                <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li style=" float: left; display: inline;">
+                    <div>
+                        <div class="thumbnail">
+                            <div class="phone_img_border"><img class="img-responsive "
+                                                               src="{% static 'phone/全部整租/房间3.jpg' %}" alt="房间1">
+                            </div>
+                            <div class="caption">
+                                <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                                <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li style=" float: left; display: inline;">
+                    <div>
+                        <div class="thumbnail">
+                            <div class="phone_img_border"><img class="img-responsive "
+                                                               src="{% static 'phone/全部整租/房间4.jpg' %}" alt="房间1">
+                            </div>
+                            <div class="caption">
+                                <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                                <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li style=" float: left; display: inline;">
+                    <div>
+                        <div class="thumbnail">
+                            <div class="phone_img_border"><img class="img-responsive "
+                                                               src="{% static 'phone/全部整租/房间1.jpg' %}" alt="房间1">
+                            </div>
+                            <div class="caption">
+                                <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                                <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li style=" float: left; display: inline;">
+                    <div>
+                        <div class="thumbnail">
+                            <div class="phone_img_border"><img class="img-responsive "
+                                                               src="{% static 'phone/全部整租/房间5.jpg' %}" alt="房间1">
+                            </div>
+                            <div class="caption">
+                                <p class="phone_img_info_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+                                <span>￥</span><span class="text-primary "><b>1250</b></span><span>元/月</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li style=" float: left; display: inline;">
+                    <div>
+                        <div class=" phone_last_img" value="/more_zhengzu/成都市">
+                            <p>点<br>击<br>查<br>看<br>更<br>多</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <script>
+            ///监控图片按钮
+            $(document).ready(function () {
+                $(".phone_img_border").click(function () {
+                    var room = $(this);
+                    alert(room.children("img").attr("alt"));
+                });
+                $(".phone_last_img").click(function () {
+                    var more = $(this);
+                    alert(more.attr("value"));
+                });
+            });
+
+        </script>
+        <!--查找结果-->
+
+
+    </div>
+
     <div class="page-header">
         <div class="container-fluid">
-            <div><h4 class="text-left">选择海骄社区的理由</h4></div>
-
-
-            <div class="row">
-                <div class="col-xs-4 ">
-                    <div class="align-right">
-                        <img class="img-responsive center-block" src="{% static '加盟优势1.png' %}">
-                        <h4 class="text-info  text-center">安全放心 </h4>
-
-                        <p class="text-info  text-center">租金保底（包租） </p>
-                    </div>
-                </div>
-                <div class="col-xs-4">
-                    <div><img class="img-responsive center-block" src="{% static '加盟优势2.png' %}"><h4
-                            class="text-info  text-center"> 稳定收益 </h4></div>
-                    <p class="text-info  text-center">30万房屋财险 </p>
-                </div>
-                <div class="col-xs-4">
+            <div><h4 class="text-left">活动</h4></div>
+        </div>
+        <div class="swipe">
+            <ul id="slider3">
+                <li style="display:inline;float: left; display: inline;">
                     <div>
-                        <img class="img-responsive center-block" src="{% static '加盟优势3.png' %}"><h4
-                            class="text-info text-center"> 省时省心 </h4>
+                        <div class="thumbnail">
+                            <div class="phone_img_huodong_border"><img class="img-responsive "
+                                                                       src="{% static 'phone/活动/活动1.png' %}" alt="房间1">
+                            </div>
+                            <div class="caption">
+                                <p class="phone_img_huodong_hidden">来自于十里彩云间，理工学子大家都懂的</p>
 
-                        <p class="text-info  text-center">专业而完备的租后服务（包管） </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li style="display:inline;float: left;  ">
+                    <div>
+                        <div class="thumbnail">
+                            <div class="phone_img_huodong_border"><img class="img-responsive "
+                                                                       src="{% static 'phone/活动/活动2.jpg' %}" alt="房间1">
+                            </div>
+                            <div class="caption">
+                                <p class="phone_img_huodong_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li style="display:inline;float: left;  ">
+                    <div>
+                        <div class="thumbnail">
+                            <div class="phone_img_huodong_border"><img class="img-responsive "
+                                                                       src="{% static 'phone/活动/活动3.jpg' %}" alt="房间1">
+                            </div>
+                            <div class="caption">
+                                <p class="phone_img_huodong_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li style="display:inline;float: left;  ">
+                    <div>
+                        <div class="thumbnail">
+                            <div class="phone_img_huodong_border"><img class="img-responsive "
+                                                                       src="{% static 'phone/活动/活动4.png' %}" alt="房间1">
+                            </div>
+                            <div class="caption">
+                                <p class="phone_img_huodong_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li style="display:inline;float: left;  ">
+                    <div>
+                        <div class="thumbnail">
+                            <div class="phone_img_huodong_border"><img class="img-responsive "
+                                                                       src="{% static 'phone/活动/活动5.png' %}" alt="房间1">
+                            </div>
+                            <div class="caption">
+                                <p class="phone_img_huodong_hidden">来自于十里彩云间，理工学子大家都懂的</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="jiamengyoushi" class="">
+        <div class="page-header">
+            <div class="container-fluid">
+                <div><h4 class="text-left">选择海骄社区的理由</h4></div>
+
+
+                <div class="row">
+                    <div class="col-xs-4 ">
+                        <div class="align-right">
+                            <img class="img-responsive center-block" src="{% static '加盟优势1.png' %}">
+                            <h4 class="text-info  text-center">安全放心 </h4>
+
+                            <p class="text-info  text-center">租金保底（包租） </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div><img class="img-responsive center-block" src="{% static '加盟优势2.png' %}"><h4
+                                class="text-info  text-center"> 稳定收益 </h4></div>
+                        <p class="text-info  text-center">30万房屋财险 </p>
+                    </div>
+                    <div class="col-xs-4">
+                        <div>
+                            <img class="img-responsive center-block" src="{% static '加盟优势3.png' %}"><h4
+                                class="text-info text-center"> 省时省心 </h4>
+
+                            <p class="text-info  text-center">专业而完备的租后服务（包管） </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
-<div class="page-header">
-    <div class="container-fluid">
-        <div><h4 class="text-left">为你贴心提供</h4></div>
-    </div>
-    <div class="swipe">
-        <ul id="slider4">
-            <li style="display:inline;float: left; display: inline;">
-                <div>
-                    <div class="thumbnail">
-                        <div class="phone_img_fuwu_border"><img class="img-responsive "
-                                                                src="{% static 'phone/服务/保洁.jpg' %}" alt="房间1">
+    <div class="page-header">
+        <div class="container-fluid">
+            <div><h4 class="text-left">为你贴心提供</h4></div>
+        </div>
+        <div class="swipe">
+            <ul id="slider4">
+                <li style="display:inline;float: left; display: inline;">
+                    <div>
+                        <div class="thumbnail">
+                            <div class="phone_img_fuwu_border"><img class="img-responsive "
+                                                                    src="{% static 'phone/服务/保洁.jpg' %}" alt="房间1">
+                            </div>
                         </div>
                     </div>
-                </div>
-            </li>
-            <li style="display:inline;float: left;  ">
-                <div>
-                    <div class="thumbnail">
-                        <div class="phone_img_fuwu_border"><img class="img-responsive "
-                                                                src="{% static 'phone/服务/维修.jpg' %}" alt="房间1">
+                </li>
+                <li style="display:inline;float: left;  ">
+                    <div>
+                        <div class="thumbnail">
+                            <div class="phone_img_fuwu_border"><img class="img-responsive "
+                                                                    src="{% static 'phone/服务/维修.jpg' %}" alt="房间1">
+                            </div>
+
                         </div>
-
                     </div>
-                </div>
-            </li>
-            <li style="display:inline;float: left;  ">
-                <div>
-                    <div class="thumbnail">
-                        <div class="phone_img_fuwu_border"><img class="img-responsive "
-                                                                src="{% static 'phone/服务/客服.jpg' %}" alt="房间1">
+                </li>
+                <li style="display:inline;float: left;  ">
+                    <div>
+                        <div class="thumbnail">
+                            <div class="phone_img_fuwu_border"><img class="img-responsive "
+                                                                    src="{% static 'phone/服务/客服.jpg' %}" alt="房间1">
+                            </div>
+
                         </div>
-
                     </div>
-                </div>
-            </li>
-            <li style="display:inline;float: left;  ">
-                <div>
-                    <div class="thumbnail">
-                        <div class="phone_img_fuwu_border"><img class="img-responsive "
-                                                                src="{% static 'phone/服务/管家.jpg' %}" alt="房间1">
+                </li>
+                <li style="display:inline;float: left;  ">
+                    <div>
+                        <div class="thumbnail">
+                            <div class="phone_img_fuwu_border"><img class="img-responsive "
+                                                                    src="{% static 'phone/服务/管家.jpg' %}" alt="房间1">
+                            </div>
+
                         </div>
-
                     </div>
-                </div>
-            </li>
+                </li>
 
-        </ul>
-    </div>
-</div>
-
-<!--公司简介-->
-<div class="jieshu">
-    <div>
-        <div class="alert phone_bottom">
-            <div class="text-center">Copyright © 2017-2017 海骄社区有限公司. All Rights Reserved 蜀ICP备XXXXXXX号</div>
+            </ul>
         </div>
     </div>
+
+    <!--公司简介-->
+    <div class="jieshu">
+        <div>
+            <div class="alert phone_bottom">
+                <div class="text-center">Copyright © 2017-2017 海骄社区有限公司. All Rights Reserved 蜀ICP备XXXXXXX号</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        //显示与隐藏缺省页面信息
+        var hidden_default_result = function () {
+            $(".default_result").css("display", "none");
+        };
+        var display_default_result = function () {
+            $(".default_result").removeAttr("style");
+        }
+    </script>
 </div>
 
-
-<script src="{% static 'range/js/jquery.range.js' %} "></script>
-<script type="text/javascript">
-    $(function () {
-
-
-        $('.range-slider').jRange({
-            from: 0,
-            to: 2500,
-            step: 50,
-            scale: [0, 500, 1000, 1500, 2000, 2500],
-            format: '%s',
-            width: $(".range").width(),
-            showLabels: true,
-            showScale: true,
-            isRange: true
-        });
-
-
-        $("#g2").click(function () {
-            var aa = $(".range-slider").val();
-            alert(aa);
-        });
-
-        $(".range>div").css("width", "100%");
-    });
-</script>
 <script type="text/javascript">
 
 
@@ -986,6 +1337,7 @@
         $(".phone_last_img >p ").css("padding-bottom", (phone_last_img - last_link_length) / 2);
 
         change_li_width();
+        set_phone_info_search_border_width();
     };
 
 

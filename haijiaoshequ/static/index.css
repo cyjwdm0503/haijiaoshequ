@@ -1,9 +1,9 @@
-test
-{
+test {
     background-color: #000;
     color: #0f0f0f;
     outline: solid #f00 1px;
 }
+
 .center-block {
     display: block;
     margin-left: auto;
@@ -217,43 +217,41 @@ li > div > .thumbnail {
 
 }
 
-
-.phone_last_img > p
-{
+.phone_last_img > p {
     color: white;
     vertical-align: text-top;
 }
 
-.modal-dialog
-{
+.modal-dialog {
     width: auto;
     margin-left: 0px;
     margin-right: 0px;
     margin-top: 0px;
 }
-.modal-footer
-{
+
+.modal-footer {
     border-bottom: 1px solid #e5e5ef;
 }
-.phone_search_li
-{
+
+.phone_search_li {
     width: 50%;
     text-align: center;
 }
 
-
-.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus
-{
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
     border: none;
     background-color: transparent;
     /* border: 1px solid grey; */
 }
 
-.nav-tabs>li.active>a >span
-{background-color: #0fb4a8;/* padding: inherit; */width: 60px;display: block;text-align: center;}
+.nav-tabs > li.active > a > span {
+    background-color: #0fb4a8; /* padding: inherit; */
+    width: 60px;
+    display: block;
+    text-align: center;
+}
 
-.nav-tabs>li >a >span
-{
+.nav-tabs > li > a > span {
     /* padding: inherit; */
     /* width: 50px; */
     color: black;
@@ -262,9 +260,38 @@ li > div > .thumbnail {
     text-align: center;
 }
 
-.nav-tabs>li>a
-{
+.nav-tabs > li > a {
     border: 0px solid transparent;
     /* width: 150px; */
     /* border: 1px solid; */
 }
+
+.phone_img_search_boder {
+    width: 120px;
+    height: 120px;
+    display: block;
+    margin-left: auto;
+}
+
+.phone_info_search_border {
+    display: block;
+    float: left;
+}
+
+.search_room_info {
+    padding: 20px 10px 10px 10px;
+    border-bottom: 10px solid #eee;
+
+
+}
+
+.search_room_info_tag
+{
+
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-top: 1px solid #eee;
+    margin-top: 5px;
+
+}
+
