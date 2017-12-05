@@ -266,6 +266,9 @@ li > div > .thumbnail {
     /* border: 1px solid; */
 }
 
+
+
+
 .phone_img_search_boder {
     width: 120px;
     height: 120px;
@@ -281,17 +284,16 @@ li > div > .thumbnail {
 .search_room_info {
     padding: 20px 10px 10px 10px;
     border-bottom: 10px solid #eee;
-
-
 }
 
 .search_room_info_tag
 {
 
-    padding-bottom: 5px;
-    padding-top: 5px;
-    border-top: 1px solid #eee;
-    margin-top: 5px;
+padding-bottom: 0px;
 
+padding-top: 10px;
+
+border-top: 1px solid #eee;
+
+margin-top: 10px;
 }
-
