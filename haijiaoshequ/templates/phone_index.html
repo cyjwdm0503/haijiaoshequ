@@ -568,7 +568,7 @@
     <!--显示房屋信息--->
     <div class="">
         <div>
-            <div class="search_room_info ">
+            <div class="search_room_info " id="room1">
                 <div class="phone_info_search_border">
                     <h5 class="">来自于十里彩云间，理工学子大家都懂的</h5>
                     <div style="margin: 10px 0px 10px 0px ">
@@ -595,7 +595,7 @@
                     <span class="badge  ">四川师范</span>
                 </div>
             </div>
-            <div class="search_room_info ">
+            <div class="search_room_info " id="room2">
                 <div class="phone_info_search_border">
                     <h5 class="">来自于十里彩云间，理工学子大家都懂的</h5>
                     <div style="margin: 10px 0px 10px 0px ">
@@ -622,7 +622,7 @@
                     <span class="badge  ">四川师范</span>
                 </div>
             </div>
-            <div class="search_room_info ">
+            <div class="search_room_info " id="room3">
                 <div class="phone_info_search_border">
                     <h5 class="">来自于十里彩云间，理工学子大家都懂的</h5>
                     <div style="margin: 10px 0px 10px 0px ">
@@ -649,7 +649,7 @@
                     <span class="badge  ">四川师范</span>
                 </div>
             </div>
-            <div class="search_room_info ">
+            <div class="search_room_info " id="room4">
                 <div class="phone_info_search_border">
                     <h5 class="">来自于十里彩云间，理工学子大家都懂的</h5>
                     <div style="margin: 10px 0px 10px 0px ">
@@ -676,7 +676,7 @@
                     <span class="badge  ">四川师范</span>
                 </div>
             </div>
-            <div class="search_room_info ">
+            <div class="search_room_info " id="room5">
                 <div class="phone_info_search_border">
                     <h5 class="">来自于十里彩云间，理工学子大家都懂的</h5>
                     <div style="margin: 10px 0px 10px 0px ">
@@ -703,7 +703,7 @@
                     <span class="badge  ">四川师范</span>
                 </div>
             </div>
-            <div class="search_room_info ">
+            <div class="search_room_info " id="room6">
                 <div class="phone_info_search_border">
                     <h5 class="">来自于十里彩云间，理工学子大家都懂的</h5>
                     <div style="margin: 10px 0px 10px 0px ">
@@ -818,6 +818,16 @@
                 width = maxwidth - 125;
                 $(".phone_info_search_border").width(width);
             }
+
+            var binding_room = function () {
+              $(".search_room_info").click(function () {
+                  roomid = $(this).attr("id");
+                  alert(roomid);
+              });
+            };
+            $(document).ready(function () {
+                binding_room();
+            })
         </script>
     </div>
 
