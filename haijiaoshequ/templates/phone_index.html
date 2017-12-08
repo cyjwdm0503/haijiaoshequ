@@ -438,13 +438,13 @@
 
         ///监听辖区与商圈位置
 
-        listen_menu = function () {
-            $(".menu_one").click(function () {
+        var listen_menu = function () {
+            $(".menu_one").unbind('click').click(function () {
                 menu_one = ($(this).find("span").text());
                 $(".menu_two").removeClass("active");
                 menu_two = null;
             });
-            $(".menu_two").click(function () {
+            $(".menu_two").unbind('click').click(function () {
                 menu_two = ($(this).find("span").text());
             });
         };
@@ -551,8 +551,9 @@
 <div class="" id="search_result">
     <div>
         <nav aria-label="">
-            <ul class="pager search_room_info" style="margin: auto" id="num_info_doc">
-                <li><span id="num_info">已经为你匹配XXX套房</span></li>
+            <ul class="pager " style="margin: auto;padding: 20px 10px 10px 10px;
+    border-bottom: 10px solid #eee;" id="num_info_doc">
+                <li><span>已经为你匹配<text id="num_info">XXX</text>套房</span></li>
             </ul>
         </nav>
 
@@ -613,7 +614,7 @@
             };
 
             var binding_room = function () {
-                $(".search_room_info").click(function () {
+                $(".search_room_info").unbind('click').click(function () {
                     roomid = $(this).attr("id");
                     alert(roomid);
                 });
@@ -624,7 +625,8 @@
             });
 
             var get_room_base = function (room_id) {
-                $.get('/room/base/' + room_id, function (data, status) {
+                microsecond = (new Date()).getTime();
+                $.get('/room/base/' + room_id + "/" + microsecond, function (data, status) {
                     if (status == "success") {
                         var room_base_json = data;
                         room_base = eval(room_base_json);
@@ -658,7 +660,8 @@
 
 
                         father.append(room);
-                        changesize();
+                        hidden_default_result();
+                        bindevent();
                     }
                 });
             };
@@ -714,7 +717,7 @@
     </div>
     <script>
         $(document).ready(function () {
-            $("#flush_more").click(function () {
+            $("#flush_more").unbind('click').click(function () {
                 $("#flush_more").text("加载中....")
                 get_room_base(2);
                 //异步刷新
@@ -953,16 +956,19 @@
         </div>
 
         <script>
-            ///监控图片按钮
-            $(document).ready(function () {
-                $(".phone_img_border").click(function () {
+            ///监控默认菜单图片按钮
+            var default_img_menu = function () {
+                $(".phone_img_border").unbind('click').click(function () {
                     var room = $(this);
                     alert(room.children("img").attr("alt"));
                 });
-                $(".phone_last_img").click(function () {
+                $(".phone_last_img").unbind('click').click(function () {
                     var more = $(this);
                     alert(more.attr("value"));
                 });
+            };
+            $(document).ready(function () {
+                default_img_menu();
             });
 
         </script>
@@ -1053,26 +1059,41 @@
                 <div><h4 class="text-left">选择海骄社区的理由</h4></div>
 
 
-                <div class="row">
+                <div class="row" style="padding-top: 20px;padding-bottom: 20px">
                     <div class="col-xs-4 ">
-                        <div class="align-right">
-                            <img class="img-responsive center-block" src="{% static '加盟优势1.png' %}">
-                            <h4 class="text-info  text-center">安全放心 </h4>
-
-                            <p class="text-info  text-center">租金保底（包租） </p>
+                        <div >
+                            <img  style="width: 50px;padding-top: 10px" class="img-responsive center-block" src="{% static 'phone/理由/无中介费.png' %}">
+                            <p class="text  text-center">无中介费 </p>
                         </div>
                     </div>
                     <div class="col-xs-4">
-                        <div><img class="img-responsive center-block" src="{% static '加盟优势2.png' %}"><h4
-                                class="text-info  text-center"> 稳定收益 </h4></div>
-                        <p class="text-info  text-center">30万房屋财险 </p>
+                       <div >
+                            <img style="width: 50px;padding-top: 10px" class="img-responsive center-block" src="{% static 'phone/理由/真实房源.png' %}">
+                            <p class="text  text-center">真实房源</p>
+                        </div>
                     </div>
                     <div class="col-xs-4">
-                        <div>
-                            <img class="img-responsive center-block" src="{% static '加盟优势3.png' %}"><h4
-                                class="text-info text-center"> 省时省心 </h4>
-
-                            <p class="text-info  text-center">专业而完备的租后服务（包管） </p>
+                        <div >
+                            <img style="width: 50px;padding-top: 10px" class="img-responsive center-block" src="{% static 'phone/理由/室友匹配.png' %}">
+                            <p class="text  text-center">室友匹配</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-4 ">
+                        <div >
+                            <img style="width: 50px;padding-top: 10px" class="img-responsive center-block" src="{% static 'phone/理由/免费WiFi.png' %}">
+                            <p class="text  text-center">免费WiFi</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div >
+                            <img style="width: 50px;padding-top: 10px" class="img-responsive center-block" src="{% static 'phone/理由/智能门锁.png' %}">
+                            <p class="text  text-center">智能门锁</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div >
+                            <img style="width: 50px;padding-top: 10px" class="img-responsive center-block" src="{% static 'phone/理由/维修保洁.png' %}">
+                            <p class="text  text-center">维修保洁</p>
                         </div>
                     </div>
                 </div>
@@ -1154,6 +1175,12 @@
 
 <script type="text/javascript">
 
+    var bindevent = function () {
+        binding_room();
+        listen_menu();
+        default_img_menu();
+        set_phone_info_search_border_width();
+    };
 
     var changesize = function () {
         var width = $("body").width() / 2.5;
@@ -1223,14 +1250,17 @@
 
         change_li_width();
         set_phone_info_search_border_width();
+        bindevent();
     };
 
 
     changesize();
 
+
     window.onresize = function () {
         changesize();
-    }
+    };
+
 
 </script>
 <script>

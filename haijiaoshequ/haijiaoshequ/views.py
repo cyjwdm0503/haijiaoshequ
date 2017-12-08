@@ -23,8 +23,6 @@ def search(request, name='haijiaoshequ'):
     return HttpResponse(template.render(context, request))
 
 
-# Create your views here.
-
 
 def apply(request, name='haijiaoshequ'):
     template = loader.get_template('apply.html');
