@@ -1,0 +1,27 @@
+#close_fullpage_btn {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    left: 10px;
+    top: 30px;
+    list-style-type: none;
+    z-index: 70;
+    color: white;
+}
+
+.section .slide {
+    background-color: black;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.index_img
+{
+    max-height: 400px;
+    background-color: #000000a8;
+}
+

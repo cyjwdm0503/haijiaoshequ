@@ -95,7 +95,7 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
 ]
 STATICFILES_DIRS = [
-    "image","static"
+    "image","static","room/image"
 ]
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
